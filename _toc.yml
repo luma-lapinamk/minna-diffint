@@ -1,0 +1,32 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Funktiot
+    chapters:
+    - file: funktiot
+    - file: rajaarvo
+    - file: asymptootit
+  - caption: Derivointia
+    chapters:
+    - file: erotusosamaara
+    - file: derivointisaannot
+    - file: aariarvot
+    - file: optimointi_2muuttujaa
+    - file: newtonin_algoritmi
+    - file: virheen_arviointi
+    - file: pns_sovitus
+  - caption: Integrointia
+    chapters:
+    - file: integraali_kaavat
+    - file: maaratty_integraali
+    - file: maaratty_sovelluksia
+    - file: pyorahdyskappaleen_tilavuus
+    - file: puolisuunnikassaanto
+  - caption: Muuta
+    chapters:
+    - file: koodaus_sivu
+    - file: fourier_muunnos
+

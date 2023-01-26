@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Monen muuttujan funktion optimointi &#8212; Differentiaali- ja integraalilaskenta</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Yhtälöiden ratkaisu numeerisesti" href="newtonin_algoritmi.html" />
+    <link rel="prev" title="Funktion ääriarvot" href="aariarvot.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Differentiaali- ja integraalilaskenta</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Johdanto
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funktiot
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="funktiot.html">
+   Funktioista
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rajaarvo.html">
+   Funktion raja-arvo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="asymptootit.html">
+   Asymptootit
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Derivointia
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="erotusosamaara.html">
+   Derivaatan käsite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="derivointisaannot.html">
+   Derivointisääntöjä
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="aariarvot.html">
+   Funktion ääriarvot
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Monen muuttujan funktion optimointi
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="newtonin_algoritmi.html">
+   Yhtälöiden ratkaisu numeerisesti
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="virheen_arviointi.html">
+   Virheen arviointia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pns_sovitus.html">
+   Pienimmän neliösumman menetelmä
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Integrointia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="integraali_kaavat.html">
+   Integraalilaskenta
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="maaratty_integraali.html">
+   Määrätty integraali
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="maaratty_sovelluksia.html">
+   Määrätyn integraalin sovelluksia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pyorahdyskappaleen_tilavuus.html">
+   Pyörähdyskappaleet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="puolisuunnikassaanto.html">
+   Puolisuunnikassääntö
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Muuta
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="koodaus_sivu.html">
+   Testailusivu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fourier_muunnos.html">
+   Fourier-muunnos
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            <a href="https://jupyterbook.org">Jupyter Book</a> voimaa
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/optimointi_2muuttujaa.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaksi-muuttujaa">
+   Kaksi muuttujaa
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lagrangen-menetelma">
+   Lagrangen menetelmä
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Monen muuttujan funktion optimointi</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaksi-muuttujaa">
+   Kaksi muuttujaa
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lagrangen-menetelma">
+   Lagrangen menetelmä
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="monen-muuttujan-funktion-optimointi">
+<h1>Monen muuttujan funktion optimointi<a class="headerlink" href="#monen-muuttujan-funktion-optimointi" title="Permalink to this headline">#</a></h1>
+<p>Ääriarvojen avulla voidaan etsiä funktioiden maksimi- tai minimiarvoja. Käytännössä tällaisia laskuja tarvitaan, kun halutaan optimoida jotakin. Tilanteesta riippuu, onko optimaalinen arvo mahdollisimman suuri vai mahdollisimman pieni. Esimerkiksi laitteiden tai raaka-aineiden kuljetukseen tarvittavan matkan olisi hyvä olla mahdollisimman pieni, kun taas tuotannolla ansaittavan rahamäärän tulisi mielellään olla mahdollisimman suuri.</p>
+<p>Yhden muuttujan funktioiden minimi- tai maksimiarvo löytyy derivaatan nollakohdista tai tarkasteltavan välin päätepisteistä. Useamman muuttujan tapauksessa on tarkasteltava osittaisderivaattojen nollakohtia.</p>
+<section id="kaksi-muuttujaa">
+<h2>Kaksi muuttujaa<a class="headerlink" href="#kaksi-muuttujaa" title="Permalink to this headline">#</a></h2>
+<p>Merkitään kahden muuttujan funktiota <span class="math notranslate nohighlight">\(f(x,y)\)</span>. Tällaista funktiota ei voida piirtää käyränä koordinaatistoon, vaan funktion graafinen esitys vastaisi kolmiulotteista pintaa. Tällaista pintaa voisi (ainakin mielikuvina) vastata esimerkiksi rutussa oleva matto tai wokkipannun kaareva sisäpinta. Toki myös esimerkiksi maapalloa tai meren pohjaa erilaisine pinnanmuotoineen voitaisiin kuvata (ja kuvataankin) kahden muuttujan funktiona. Tällöin muuttujina olisivat paikkaa tasossa kuvaavat koordinaatit, esimerkiksi pituus- ja leveysasteet.</p>
+<p>Maksimi- tai minimiarvot olisivat tällaisten pintojen matalimpia tai korkeimpia kohtia. Erona yhden muuttujan funktioon on se, että nämä minimit ja maksimit löytyvät sellaisista pisteistä <span class="math notranslate nohighlight">\((x,y)\)</span>, joissa derivaatta on kummankin muuttujan suhteen nolla. Käytännössä laskutehtävästä voi tulla hyvin pitkä ja hankalakin, ja siinä kannattaa hyödyntää tietokonetta.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Pihalla on kohteet A, B ja C, joiden sijainnit pihan koordinaatistossa ilmaistuna ovat <span class="math notranslate nohighlight">\(A=(0,0)\)</span>, <span class="math notranslate nohighlight">\(B=(0,3)\)</span> ja <span class="math notranslate nohighlight">\(C=(10,0)\)</span>. Mistä pisteestä <span class="math notranslate nohighlight">\((x,y)\)</span> yhteenlaskettu matka näihin pisteisiin on mahdollisimman lyhyt?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Pisteen <span class="math notranslate nohighlight">\((x,y)\)</span> etäisyys pisteestä A on <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2}\)</span>, pisteestä B <span class="math notranslate nohighlight">\(\sqrt{x^2+(y-3)^2}\)</span> ja pisteestä C <span class="math notranslate nohighlight">\(\sqrt{(x-10)^2+y^2}\)</span>. Yhteenlaskettu matka on siis <span class="math notranslate nohighlight">\(f(x,y)=\sqrt{x^2+y^2}+\sqrt{x^2+(y-3)^2}+\sqrt{(x-10)^2+y^2}\)</span>.</p>
+<p>Derivointi saattaa onnistua helpommin, kun neliöjuuret kirjoitetaan murtopotensseina:</p>
+<p><span class="math notranslate nohighlight">\(f(x,y)=(x^2+y^2)^{\frac{1}{2}}+(x^2+(y-3)^2)^{\frac{1}{2}}+((x-10)^2+y)^{\frac{1}{2}}\)</span></p>
+<p>Osittaisderivaatoiksi saadaan (käsin tai esim. WolframAlphalla):</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial f}{\partial x} = x(x^2+y^2)^{-\frac{1}{2}}+ x(x^2+(y-3)^2)^{-\frac{1}{2}}+x((x-10)^2+y^2)^{-\frac{1}{2}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial f}{\partial y} = y(x^2+y^2)^{-\frac{1}{2}}+ y(x^2+(y-3)^2)^{-\frac{1}{2}}+y((x-10)^2+y^2)^{-\frac{1}{2}}\)</span></p>
+<p>Lopuksi pitäisi vielä ratkaista yhtälöpari:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}\begin{cases} \frac{\partial f}{\partial x} = 0 \\\frac{\partial f}{\partial y} = 0\end{cases}\end{equation}\)</span></p>
+<p><a class="reference external" href="https://www.wolframalpha.com/">WolframAlpha</a> ratkaisee tehtävän suoraan komennolla:</p>
+<p>solve d/dy sqrt(x^2+y^2)+sqrt(x^2+(y-3)^2)+sqrt((x-10)^2+y^2)=0, d/dx sqrt(x^2+y^2)+sqrt(x^2+(y-3)^2)+sqrt((x-10)^2+y^2)=0</p>
+<p>Toinen vaihtoehto on käyttää komentoa Minimize:</p>
+<p>minimize sqrt(x^2+y^2)+sqrt(x^2+(y-3)^2)+sqrt((x-10)^2+y^2)</p>
+<p>Kummallakin tavalla ratkaisuiksi saadaan <span class="math notranslate nohighlight">\(x=0.82, y=1.09\)</span>.</p>
+</div>
+</div>
+<p>Joskus funktion muuttujia sitoo jokin ehto. Tällöin funktio saadaan muokattua yhden muuttujan funktioksi, ja ääriarvo löytyy funktion derivaatan nollakohdan avulla. Muuttujia sitova ehto voi olla aluetta rajaavan aidan pituus, kolmiulotteisen kappaleen valmistukseen käytössä oleva materiaalin määrä, kappaleen tilavuus tms.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Pahvista taitellaan neliöpohjainen laatikko. Laatikon pohjaneliön sivu on <span class="math notranslate nohighlight">\(x\)</span> ja laatikon korkeus on <span class="math notranslate nohighlight">\(y\)</span>. Laatikon tilavuuden tulisi olla 2 litraa eli 2000 kuutiosenttimetriä. Minkä muotoinen laatikon tulisi olla, että pahvia kuluisi mahdollisimman vähän? Oletetaan, että pahvia riittää joka kohtaan yksi kerros (saumakohtiin ei tule päällekkäistä pahvia, vaan reilusti teippiä).</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Laatikkoon kuluvan pahvin määrä koostuu pohjasta, kannesta ja neljästä sivuseinämästä: siis pahvin pinta-ala on <span class="math notranslate nohighlight">\(A(x,y)=2x^2+4xy\)</span>.</p>
+<p>Muuttujia sitovana ehtona toimii laatikon tilavuus <span class="math notranslate nohighlight">\(V=x^2 y\)</span>. Tästä ehdosta voidaan ratkaista <span class="math notranslate nohighlight">\(y=\frac{V}{x^2}\)</span> (yhtä hyvin voitaisiin ratkaista myös <span class="math notranslate nohighlight">\(x\)</span>, mutta potenssiinkorotus tekee laskusta hieman hankalamman). Kun tämä sijoitetaan pinta-alan lausekkeeseen, saadaan</p>
+<p><span class="math notranslate nohighlight">\(A(x)=2x^2+4x\cdot \frac{V}{x^2}\)</span> eli <span class="math notranslate nohighlight">\(A(x)=2x^2+\frac{4V}{x}\)</span>.</p>
+<p>Derivoidaan funktio:</p>
+<p><span class="math notranslate nohighlight">\(A'(x)=4x-\frac{4V}{x^2}\)</span></p>
+<p>Etsitään derivaatan nollakohta:</p>
+<p><span class="math notranslate nohighlight">\(4x-\frac{4V}{x^2} = 0 \leftrightarrow x=\sqrt[3]{V} \leftrightarrow x=\sqrt[3]{2000~\text{cm}^3} \approx 12.6~\text{cm}\)</span>.</p>
+<p>Pohjan sivuksi saatiin siis 12.6 cm, ja korkeudeksi voidaan laskea <span class="math notranslate nohighlight">\(y=\frac{2000~\text{cm}^3}{(12.6~\text{cm})^2} = 12.6~\text{cm}\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="lagrangen-menetelma">
+<h2>Lagrangen menetelmä<a class="headerlink" href="#lagrangen-menetelma" title="Permalink to this headline">#</a></h2>
+<p>Yleisessä tapauksessa, jossa muuttujia voi olla enemmänkin kuin kaksi, eräs tapa optimointiin on Lagrangen menetelmä. Menetelmässä tarvitaan jokin muuttujia sitova ehto. Tarkastellaan esimerkkinä kahden muuttujan funktiota <span class="math notranslate nohighlight">\(f(x,y)\)</span>. Merkitään muuttujia <span class="math notranslate nohighlight">\(x\)</span> ja <span class="math notranslate nohighlight">\(y\)</span> sitovaa ehtoa funktiolla <span class="math notranslate nohighlight">\(g(x,y)=C, C\in \Re\)</span>. Näistä funktioista muodostetaan niinsanottu Lagrangen funktio <span class="math notranslate nohighlight">\(L(x,y,\lambda)\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(L(x,y,\lambda)=f(x,y)-\lambda(g(x,y)-C)\)</span></p>
+<p>Funktion ääriarvot löytyvät kohdista, jossa kaikki Lagrangen funktion osittaisderivaatat ovat nollia, siis</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial x}=0, \frac{\partial L}{\partial y}=0, \frac{\partial L}{\partial \lambda}=0\)</span>.</p>
+<p>Käytännössä ratkaistavaksi tulee siis yhtälöryhmä.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Urheilukenttä muodostuu suorakulmiosta ja päädyissä olevista puoliympyröistä. Suorakulmion pituus on <span class="math notranslate nohighlight">\(y\)</span> ja leveys <span class="math notranslate nohighlight">\(x\)</span>, jolloin päädyssä olevien puoliympyröiden halkaisija on myös <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>a) Millä mitoilla <span class="math notranslate nohighlight">\(x\)</span> ja <span class="math notranslate nohighlight">\(y\)</span> kentän keskellä jäävän suorakulmion pinta-ala on mahdollisimman suuri, kun kenttää rajaavan juoksuradan pituudeksi halutaan 800 metriä?</p>
+<p>b) Millä mitoilla <span class="math notranslate nohighlight">\(x\)</span> ja <span class="math notranslate nohighlight">\(y\)</span> koko kentän sisälle jäävästä pinta-alasta saadaan mahdollisimman suuri, kun kenttää rajaavan juoksuradan pituus on edelleen 800 metriä?</p>
+<p><img alt="Urheilukenttä" src="_images/urheilukentta.png" /></p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Kentän ympärysmitta koostuu kahdesta pitkästä sivusta ja kahdesta puolikkaasta ympyrän kehästä. Pitkien sivun summa on <span class="math notranslate nohighlight">\(2y\)</span>. Kahdesta puoliympyrän kehästä muodostuu yksi kokonainen ympyrän kehä. Kehän pituus on on <span class="math notranslate nohighlight">\(2\pi \frac{x}{2}=\pi x\)</span>. Muuttujia sitova yhtälö on siis juoksuradan pituutta kuvaava funktio <span class="math notranslate nohighlight">\(g(x,y)=2y+\pi x\)</span>, ja koska radan pituus on määrätty, niin <span class="math notranslate nohighlight">\(2y+\pi x = 800\)</span>.</p>
+<p>Muodostetaan maksimoitavaa pinta-alaa kuvaava funktio erikseen kohdissa a) ja b).</p>
+<p>a) Keskelle jäävä alue on pinta-alaltaan <span class="math notranslate nohighlight">\(xy\)</span>. Muodostetaan Lagrangen funktio:</p>
+<p><span class="math notranslate nohighlight">\(L(x,y,\lambda)=xy-\lambda(2y+\pi x-800)\)</span></p>
+<p><span class="math notranslate nohighlight">\(L(x,y,\lambda)=xy-2\lambda y-\pi \lambda x + 800\lambda\)</span></p>
+<p>Osittaisderivaatat ovat:</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial x}=y-\pi \lambda\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial y}=x-2\lambda\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \lambda} = -2y -\pi x +800\)</span></p>
+<p>Yhtälöryhmälle</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}\begin{cases}y-\pi \lambda=0\\x-2\lambda=0\\-2y -\pi x + 800=0\end{cases}\end{equation}\)</span></p>
+<p>saadaan ratkaisu <span class="math notranslate nohighlight">\(x = \frac{400}{\pi}, y = 200\)</span>.</p>
+<p>b) Urheilukentän pinta-ala on suorakulmion alan <span class="math notranslate nohighlight">\(xy\)</span> sekä kahden puoliympyrän alojen summa. Kaksi puolikasta ympyrää vastaa pinta-alaltaan yhtä kokonaista ympyrää. Kun ympyrän halkaisija on <span class="math notranslate nohighlight">\(x\)</span>, niin ympyrän ala on <span class="math notranslate nohighlight">\(\pi \frac{x^2}{4}\)</span>. Tällöin koko kentän pinta-alaksi saadaan <span class="math notranslate nohighlight">\(f(x,y)=xy+\pi \frac{x^2}{4}\)</span>.</p>
+<p>Muodostetaan Lagrangen funktio:</p>
+<p><span class="math notranslate nohighlight">\(L(x,y,\lambda)=xy+\pi \frac{x^2}{4}-\lambda(2y+\pi x-800)\)</span></p>
+<p><span class="math notranslate nohighlight">\(L(x,y,\lambda)=xy+\pi \frac{x^2}{4}-2\lambda y-\pi \lambda x + 800\lambda\)</span></p>
+<p>Osittaisderivaatat ovat:</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial x}=y+\frac{\pi}{2}x-\pi \lambda\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial y}=x-2\lambda\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \lambda} = -2y -\pi x + 800\)</span></p>
+<p>Yhtälöryhmälle</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}\begin{cases}y+\frac{\pi}{2}x-\pi \lambda=0\\x-2\lambda=0\\-2y -\pi x + 800=0\end{cases}\end{equation}\)</span></p>
+<p>saadaan ratkaisu <span class="math notranslate nohighlight">\(x = \frac{800}{\pi}, y = 0\)</span>. Toisin sanoen suurin kenttä olisi ympyrän muotoinen.</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="aariarvot.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Funktion ääriarvot</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="newtonin_algoritmi.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Yhtälöiden ratkaisu numeerisesti</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

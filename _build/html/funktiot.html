@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Funktioista &#8212; Differentiaali- ja integraalilaskenta</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Funktion raja-arvo" href="rajaarvo.html" />
+    <link rel="prev" title="Johdanto" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Differentiaali- ja integraalilaskenta</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Johdanto
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funktiot
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Funktioista
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rajaarvo.html">
+   Funktion raja-arvo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="asymptootit.html">
+   Asymptootit
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Derivointia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="erotusosamaara.html">
+   Derivaatan käsite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="derivointisaannot.html">
+   Derivointisääntöjä
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="aariarvot.html">
+   Funktion ääriarvot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimointi_2muuttujaa.html">
+   Monen muuttujan funktion optimointi
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="newtonin_algoritmi.html">
+   Yhtälöiden ratkaisu numeerisesti
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="virheen_arviointi.html">
+   Virheen arviointia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pns_sovitus.html">
+   Pienimmän neliösumman menetelmä
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Integrointia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="integraali_kaavat.html">
+   Integraalilaskenta
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="maaratty_integraali.html">
+   Määrätty integraali
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="maaratty_sovelluksia.html">
+   Määrätyn integraalin sovelluksia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pyorahdyskappaleen_tilavuus.html">
+   Pyörähdyskappaleet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="puolisuunnikassaanto.html">
+   Puolisuunnikassääntö
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Muuta
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="koodaus_sivu.html">
+   Testailusivu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fourier_muunnos.html">
+   Fourier-muunnos
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            <a href="https://jupyterbook.org">Jupyter Book</a> voimaa
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/funktiot.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maarittelyjoukko-ja-arvojoukko">
+   Määrittelyjoukko ja arvojoukko
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktion-kasvavuus-ja-vahenevyys">
+   Funktion kasvavuus ja vähenevyys
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktion-parillisuus-ja-parittomuus">
+   Funktion parillisuus ja parittomuus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#yhdistetty-funktio">
+   Yhdistetty funktio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaanteisfunktio">
+   Käänteisfunktio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktion-siirto-peilaus-ja-skaalaus">
+   Funktion siirto, peilaus ja skaalaus
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Funktioista</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maarittelyjoukko-ja-arvojoukko">
+   Määrittelyjoukko ja arvojoukko
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktion-kasvavuus-ja-vahenevyys">
+   Funktion kasvavuus ja vähenevyys
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktion-parillisuus-ja-parittomuus">
+   Funktion parillisuus ja parittomuus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#yhdistetty-funktio">
+   Yhdistetty funktio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaanteisfunktio">
+   Käänteisfunktio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktion-siirto-peilaus-ja-skaalaus">
+   Funktion siirto, peilaus ja skaalaus
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="funktioista">
+<h1>Funktioista<a class="headerlink" href="#funktioista" title="Permalink to this headline">#</a></h1>
+<p>Funktio yhdistää luvun yksikäsitteisesti johonkin toiseen lukuun. Usein funktiota merkitään <span class="math notranslate nohighlight">\(f(x)\)</span>, missä <span class="math notranslate nohighlight">\(f\)</span> on funktion nimi ja <span class="math notranslate nohighlight">\(x\)</span> on funktion muuttuja. Funktion lauseke määrittelee sen, mitä luvulle <span class="math notranslate nohighlight">\(x\)</span> tapahtuu. Esimerkiksi funktion <span class="math notranslate nohighlight">\(f(x)=3x+1\)</span> tuloksena on luku <span class="math notranslate nohighlight">\(x\)</span> kerrottuna luvulla 3, ja sitten vielä lisätään luku 1. Sijoittamalla luvun <span class="math notranslate nohighlight">\(x\)</span> paikalle eri arvoja saadaan vastaavia funktion arvoja: <span class="math notranslate nohighlight">\(f(0)=1, f(1)=4, f(2)=7, \dots\)</span>. On myös sellaisia funktioita, jotka eivät riipu ollenkaan mistään muuttujasta, esimerkiksi <span class="math notranslate nohighlight">\(f(x)=7\)</span>. Jotkut funktiot taas ovat riippuvaisia usemmasta kuin yhdestä muuttujasta, esim. <span class="math notranslate nohighlight">\(f(x,y)=2x+3y\)</span>. Tarkastellaan aluksi vain yhden muuttujan funktioita <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<section id="maarittelyjoukko-ja-arvojoukko">
+<h2>Määrittelyjoukko ja arvojoukko<a class="headerlink" href="#maarittelyjoukko-ja-arvojoukko" title="Permalink to this headline">#</a></h2>
+<p>Jokaisella funktiolla on sille ominainen lukujoukko, josta funktion lausekkeeseen sijoitettavat luvut <span class="math notranslate nohighlight">\(x\)</span> voidaan valita. Tästä joukosta käytetään nimitystä määrittelyjoukko. Funktio on määritelty vain niillä luvuilla, jotka kuuluvat sen määrittelyjoukkoon.</p>
+<p><strong>Määrittelyjoukko</strong> on usein koko reaalilukujen joukko. Poikkeuksia on esimerkiksi seuraavissa tapauksissa:</p>
+<ul class="simple">
+<li><p>Funktio kuvastaa sellaista ilmiötä, johon muuttujalle on järkevää valita vain tietynlaisia arvoja. Esim. jos <span class="math notranslate nohighlight">\(f(x)\)</span> kuvaa koiranpennun painoa, kun se on <span class="math notranslate nohighlight">\(x\)</span> viikkoa vanha, niin muuttujan <span class="math notranslate nohighlight">\(x\)</span> arvoksi ei ole järkevää valita negatiivisia lukuja eikä toisaalta myöskään hyvin suuria lukuja.</p></li>
+<li><p>Funktion lausekkeessa <span class="math notranslate nohighlight">\(x\)</span> esiintyy nimittäjässä siten, että nimittäjän arvoksi on jollakin luvun <span class="math notranslate nohighlight">\(x\)</span> arvolla mahdollista tulla nolla. Esimerkiksi jos funktion lauseke on <span class="math notranslate nohighlight">\(f(x)=\frac{2}{x-3}\)</span>, niin lausekkeeseen ei voi sijoittaa lukua <span class="math notranslate nohighlight">\(x=3\)</span>. Määrittelyjoukkoon kelpaavat reaalilukujen joukosta kaikki muut luvut paitsi 3.</p></li>
+<li><p>Funktion lausekkeessa <span class="math notranslate nohighlight">\(x\)</span> esiintyy parillisen juuren sisällä. Parilliset juuret on määritelty vain positiivisille reaalijuurille. Jos esimerkiksi funktion lauseke on <span class="math notranslate nohighlight">\(f(x)=\sqrt{x+2}\)</span>, niin luvun <span class="math notranslate nohighlight">\(x\)</span> pitää olla vähintään 2, sillä tulee olla <span class="math notranslate nohighlight">\(x-2 \geq 0\)</span>.</p></li>
+</ul>
+<p><strong>Arvojoukko</strong> on se lukujoukko, johon kuuluvat kaikki ne luvut, jotka funktion lauseke tuottaa, kun funktioon on sijoitettu kaikki mahdolliset määrittelyjoukon luvut. Arvojoukkokin voi olla koko reaalilukujen joukko. Rajoituksia voi olla esimerkiksi silloin, kun funktion lausekkeessa on polynomi, jolla on olemassa pienin tai suurin mahdollinen arvo. Esimerkiksi funktion <span class="math notranslate nohighlight">\(f(x)=x^2-10\)</span> arvo ei millään <span class="math notranslate nohighlight">\(x\)</span>:n arvolla voi olla pienempi kuin -10, sillä olipa luku <span class="math notranslate nohighlight">\(x\)</span> mikä tahansa, niin varmasti <span class="math notranslate nohighlight">\(x^2\)</span> on vähintään nolla.</p>
+<p>Lukujoukkoja voidaan ilmaista eri tavoin:</p>
+<ul class="simple">
+<li><p>Merkintä <span class="math notranslate nohighlight">\(x \in \Re, x \neq 3\)</span> tarkoittaa, että <span class="math notranslate nohighlight">\(x\)</span> voi olla mikä tahansa reaaliluku mutta ei 3.</p></li>
+<li><p>Merkintä <span class="math notranslate nohighlight">\(x=[0, 10]\)</span> tarkoittaa samaa kuin <span class="math notranslate nohighlight">\(0 \leq x \leq 10\)</span>, eli <span class="math notranslate nohighlight">\(x\)</span> voi olla lukujen 0 ja 10 välissä, ja myös nämä välin päätepisteet ovat hyväksyttyviä.</p></li>
+<li><p>Merkintä <span class="math notranslate nohighlight">\([0,10[\)</span> tarkoittaa joukkoa, joka sisältää kaikki vähintään nollan suuruiset, mutta lukua 10 pienemmät luvut, eikä itse lukua 10.</p></li>
+<li><p>Merkintä <span class="math notranslate nohighlight">\(x \in ]-\infty, 2]\)</span> tarkoittaa samaa kuin <span class="math notranslate nohighlight">\(x \leq 2\)</span>. Äärettömän ja miinus äärettömän viereinen hakasulku on aina “väärin päin”, eli luku <span class="math notranslate nohighlight">\(x\)</span> ei voi olla äärettömän suuri tai pieni.</p></li>
+</ul>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Määritä seuraavien funktioiden määrittely- ja arvojoukot:</p>
+<p>a) <span class="math notranslate nohighlight">\(f(x)=\frac{3+x}{x}\)</span>, b) <span class="math notranslate nohighlight">\(g(x)=x^2+1\)</span> ja c) <span class="math notranslate nohighlight">\(h(x)=\sqrt{2x-12}\)</span>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>a) Funktion <span class="math notranslate nohighlight">\(f(x)=\frac{3+x}{x}\)</span> lausekkeeseen ei voi sijoittaa lukua 0, sillä nollalla jakamista ei ole määritelty. Funktion määrittelyjoukko koostuu siis kaikista reaaliluvuista paitsi luvusta 0. Tätä joukkoa voidaan merkitä <span class="math notranslate nohighlight">\(x \in \Re, x \neq 0\)</span>. Arvojoukkoon kuuluvat kaikki reaaliluvut.</p>
+<p>b) Funktion <span class="math notranslate nohighlight">\(g(x)=x^2+1\)</span> lausekkeeseen voidaan sijoittaa mikä tahansa luku <span class="math notranslate nohighlight">\(x\)</span>, joten funktion määrittelyjoukko on reaalilukujen joukko <span class="math notranslate nohighlight">\(\Re\)</span>. Sen sijaan arvojoukko voi koostua vain luvusta 1 ja sitä suuremmista luvuista, sillä <span class="math notranslate nohighlight">\(x^2 \geq 0\)</span> millä tahansa arvolla <span class="math notranslate nohighlight">\(x\)</span>. Arvojoukkoa voidaan merkitä <span class="math notranslate nohighlight">\([1, \infty[\)</span>.</p>
+<p>c) Funktion <span class="math notranslate nohighlight">\(h(x)=\sqrt{2x-12}\)</span> neliöjuuren sisällä olevan luvun tulee olla vähintään nolla, sillä neliöjuuri on määritelty vain positiivisille reaaliluvuille. Tulee siis olla <span class="math notranslate nohighlight">\(2x-12 \geq 0\)</span>, josta saadaan ehto <span class="math notranslate nohighlight">\(x \geq 6\)</span>. Määrittelyjoukon alaraja puolestaan on neliöjuuri tästä pienimmästä mahdollisesta luvun <span class="math notranslate nohighlight">\(2x-12\)</span> arvosta, eli <span class="math notranslate nohighlight">\(\sqrt{0}=0\)</span>. Niinpä määrittelyjoukko on <span class="math notranslate nohighlight">\(x \geq 6\)</span> ja arvojoukko <span class="math notranslate nohighlight">\(f(x) \geq 0\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="funktion-kasvavuus-ja-vahenevyys">
+<h2>Funktion kasvavuus ja vähenevyys<a class="headerlink" href="#funktion-kasvavuus-ja-vahenevyys" title="Permalink to this headline">#</a></h2>
+<p>Oletetaan, että funktio <span class="math notranslate nohighlight">\(f(x)\)</span> on määritelty välillä <span class="math notranslate nohighlight">\(a \leq x \leq b\)</span>. Funktio <span class="math notranslate nohighlight">\(f(x)\)</span> on aidosti kasvava, jos <span class="math notranslate nohighlight">\(f(x_1) &lt; f(x_2)\)</span> aina, kun <span class="math notranslate nohighlight">\(a \leq x_1 &lt; x_2 \leq b\)</span>. Jos funktio on pelkästään kasvava, eikä aidosti kasvava, niin joissakin pisteissä on myös mahdollista olla <span class="math notranslate nohighlight">\(f(x_1)=f(x_2)\)</span>, vaikka <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span>.</p>
+<p>Vastaavasti <span class="math notranslate nohighlight">\(f(x)\)</span> on aidosti vähenevä, jos <span class="math notranslate nohighlight">\(f(x_2) &lt; f(x_1)\)</span> aina, kun <span class="math notranslate nohighlight">\(a \leq x_1 &lt; x_2 \leq b\)</span>. Vähenevässä funktiossa joissakin pisteissä on myös mahdollista olla <span class="math notranslate nohighlight">\(f(x_2)=f(x_1)\)</span>, vaikka <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span>.</p>
+<p>Kasvavuutta ja vähenevyyttä voidaan myöhemmin tutkia funktion derivaatan avulla, mutta aluksi sitä tarkastellaan suoraan funktioiden lausekkeista. Tällöin sijoitetaan lausekkeisiin mielivaltaiset luvut <span class="math notranslate nohighlight">\(x_1\)</span> ja <span class="math notranslate nohighlight">\(x_2\)</span> olettaen, että <span class="math notranslate nohighlight">\(x_1\)</span> ja <span class="math notranslate nohighlight">\(x_2\)</span>, ja tarkastellaan funktion arvoista muodostuvaa epäyhtälöä.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Osoita, että</p>
+<p>a) <span class="math notranslate nohighlight">\(f(x)=-4x+6\)</span> on vähenevä,</p>
+<p>b) <span class="math notranslate nohighlight">\(f(x)=\frac{x}{x+1}\)</span> on kasvava, kun <span class="math notranslate nohighlight">\(x \geq 0\)</span>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>a) Valitaan mielivaltaiset luvut <span class="math notranslate nohighlight">\(x_1, x_2\)</span> siten, että <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span>. Jos funktio <span class="math notranslate nohighlight">\(f(x)\)</span> on vähenevä, niin tulee olla <span class="math notranslate nohighlight">\(f(x_1) \geq f(x_2)\)</span>. Siis</p>
+<p><span class="math notranslate nohighlight">\(-4 x_1 + 6 \geq -4x_2 +6\)</span></p>
+<p><span class="math notranslate nohighlight">\(-4 x_1 \geq -4 x_2\)</span></p>
+<p>Epäyhtälön molemmat puolet pitäisi jakaa luvulla -4. Kun epäyhtälöä kerrotaan tai jaetaan negatiivisella luvulla, niin vertailumerkin suunta muuttuu. Siis saadaan tulos <span class="math notranslate nohighlight">\(x_1 \leq x_2\)</span>. Tulos on tosi, sillä tällainen oletus tehtiin muuttujien arvoille.</p>
+<p>b) Olkoot luvut <span class="math notranslate nohighlight">\(x_1, x_2\)</span> mielivaltaisia siten, että <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span> ja <span class="math notranslate nohighlight">\(x_1 \geq 0, x_2 \geq 0\)</span>. (Huomautus: myös nollaa pienemmät luvut, paitsi -1, voisivat kuulua funktion määrittelyjoukkoon, mutta tässä tarkastellaan vain positiivisia lukuja.)</p>
+<p>Jos funktio <span class="math notranslate nohighlight">\(f(x)\)</span> on kasvava, niin tulee olla <span class="math notranslate nohighlight">\(f(x_1) \leq f(x_2)\)</span>. Siis</p>
+<p><span class="math notranslate nohighlight">\(\frac{x_1}{x_1+1} \leq \frac{x_2}{x_2+1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{x_1}{x_1+1} - \frac{x_2}{x_2+1} \leq 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{(x_2+1)x_1}{(x_1+1)(x_2+1)} - \frac{(x_1+1)x_2}{(x_1+1)(x_2+1)} \leq 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{x_2 x_1 + x_1 -x_1 x_2 -x_2}{(x_1+1)(x_2+1)}  \leq 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{x_1-x_2}{(x_1+1)(x_2+1)}\leq 0\)</span></p>
+<p>Epäyhtälö on tosi, sillä murtolausekkeen nimittäjä on aina positiivinen ja osoittaja on negatiivinen, sillä valittiin <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span>. Niinpä funktio on kasvava ja tarkemmin jopa aidosti kasvava.</p>
+</div>
+</div>
+</section>
+<section id="funktion-parillisuus-ja-parittomuus">
+<h2>Funktion parillisuus ja parittomuus<a class="headerlink" href="#funktion-parillisuus-ja-parittomuus" title="Permalink to this headline">#</a></h2>
+<p>Funktio <span class="math notranslate nohighlight">\(f(x)\)</span> on parillinen, jos <span class="math notranslate nohighlight">\(f(-x)=f(x)\)</span>. Funktio saa siis saman arvon sekä positiivisella että negatiivisella muuttujan arvolla, kunhan vain muuttujan itseisarvo on sama. Tällaisen funktion kuvaaja on symmetrinen <span class="math notranslate nohighlight">\(y\)</span>-akselin suhteen, kuten esimerkiksi funktiolla <span class="math notranslate nohighlight">\(f(x)=5x^2\)</span>. Jos kuvaaja taitettaisiin pystyakselin kohdalta kaksinkerroin, kuvaajan puolikkaat osuisivat päällekkäin.</p>
+<p>Funktio <span class="math notranslate nohighlight">\(f(x)\)</span> on pariton, jos <span class="math notranslate nohighlight">\(f(-x)=-f(x)\)</span>. Toisin sanoen jos muuttujan paikalle vaihdetaan sen vastaluku, niin funktion arvokin muuttuu vastaluvukseen. Tällaisen funktion kuvaaja on sellainen, että vasen puoli on vaaka-akselin ympäri käännetty peilikuva oikeasta puolesta. Esimerkki tällaisesta funktiosta on <span class="math notranslate nohighlight">\(f(x)=2x^3\)</span>.</p>
+<p><img alt="Parillinen ja pariton funktio" src="_images/parillinen_pariton.PNG" /></p>
+<p>Suuri osa funktioista ei ole parillisia eikä parittomia. Funktion parillisuus tai parittomuus selvitetään tarkastelemalla funktion lausekkeita <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(f(-x)\)</span> ja <span class="math notranslate nohighlight">\(-f(x)\)</span>, siis sijoittamatta luvun <span class="math notranslate nohighlight">\(x\)</span> paikalle mitään arvoa, ja vertaamalla niitä keskenään.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Tarkastele seuraavien funktioiden parillisuutta ja parittomuutta.</p>
+<p>a) <span class="math notranslate nohighlight">\(f(x)=x^5-3x\)</span></p>
+<p>b) <span class="math notranslate nohighlight">\(f(x)=x^4-3x^2\)</span></p>
+<p>c) <span class="math notranslate nohighlight">\(f(x)=x^2+x+2\)</span></p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>a) <span class="math notranslate nohighlight">\(f(-x)=(-x)^5-3(-x) = -x^5+3x = -(x^5-3x)=-f(x)\)</span>, joten funktio on pariton</p>
+<p>b) <span class="math notranslate nohighlight">\(f(-x)=(-x)^4-3(-x)^2 = x^4-3x^2=f(x)\)</span>, joten funktio on parillinen</p>
+<p>c) <span class="math notranslate nohighlight">\(f(-x)=(-x)^2-x+2=x^2-x+2\)</span></p>
+<p>Tulos ei ole sama kuin <span class="math notranslate nohighlight">\(f(x)\)</span> eikä <span class="math notranslate nohighlight">\(-f(x)=-x^2-x-2\)</span>, joten funktio ei ole pariton eikä parillinen</p>
+</div>
+</div>
+</section>
+<section id="yhdistetty-funktio">
+<h2>Yhdistetty funktio<a class="headerlink" href="#yhdistetty-funktio" title="Permalink to this headline">#</a></h2>
+<p>Olkoot funktiot <span class="math notranslate nohighlight">\(f(x)\)</span> ja <span class="math notranslate nohighlight">\(g(x)\)</span>. Näistä voidaan muodostaa yhdistetty funktio, jota merkitään <span class="math notranslate nohighlight">\((f \circ g) (x)\)</span> siten, että lasketaan ensin funktion arvo <span class="math notranslate nohighlight">\(g(x)\)</span> ja sijoitetaan se sitten funktion <span class="math notranslate nohighlight">\(f(x)\)</span> muuttujaksi. Toisin sanoen <span class="math notranslate nohighlight">\((f \circ g) (x) = f(g(x))\)</span>.</p>
+<p>Funktiota <span class="math notranslate nohighlight">\(f\)</span> nimitetään ulkofunktioksi ja funktiota <span class="math notranslate nohighlight">\(g\)</span> sisäfunktioksi. Yleisesti ottaen funktioiden järjestyksellä on väliä, siis <span class="math notranslate nohighlight">\((f \circ g)(x) = (g \circ f)(x)\)</span> pitää paikkansa vain erikoistapauksissa.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Muodosta <span class="math notranslate nohighlight">\((f \circ g) (x)\)</span> ja <span class="math notranslate nohighlight">\((g \circ f) (x)\)</span>, kun <span class="math notranslate nohighlight">\(f(x)=3x\)</span> ja <span class="math notranslate nohighlight">\(g(x)=x+1\)</span>.</p>
+<p>Laske lisäksi arvot <span class="math notranslate nohighlight">\((f\circ g) (2)\)</span> ja <span class="math notranslate nohighlight">\((g \circ f) (2)\)</span>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p><span class="math notranslate nohighlight">\((f\circ g) (x)= 3(x+1)=3x+3, (f\circ g) (2) = 6+3 = 9\)</span></p>
+<p><span class="math notranslate nohighlight">\((g \circ f) (x) = (3x) + 1 = 3x+1, (g \circ f) (2) = 6+1 = 7\)</span></p>
+</div>
+</div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Muodosta <span class="math notranslate nohighlight">\((f \circ g) (x)\)</span> ja <span class="math notranslate nohighlight">\((g \circ f) (x)\)</span>, kun <span class="math notranslate nohighlight">\(f(x)=2x\)</span> ja <span class="math notranslate nohighlight">\(g(x)=\frac{x}{3}\)</span>.</p>
+<p>Laske lisäksi arvot <span class="math notranslate nohighlight">\((f\circ g) (1)\)</span> ja <span class="math notranslate nohighlight">\((g \circ f) (1)\)</span>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p><span class="math notranslate nohighlight">\((f\circ g) (x)= 2\cdot \frac{x}{3} = \frac{2x}{3}, (f\circ g) (1) = \frac{2\cdot 1}{3} = \frac{2}{3}\)</span></p>
+<p><span class="math notranslate nohighlight">\((g \circ f) (x) = \frac{2x}{3}, (g \circ f) (1) = \frac{2\cdot1}{3} =\frac{2}{3}\)</span></p>
+</div>
+</div>
+</section>
+<section id="kaanteisfunktio">
+<h2>Käänteisfunktio<a class="headerlink" href="#kaanteisfunktio" title="Permalink to this headline">#</a></h2>
+<p>Funktiolla <span class="math notranslate nohighlight">\(f(x)\)</span> voi olla olemassa käänteisfunktio <span class="math notranslate nohighlight">\(f^{-1}(x)\)</span>. Käänteisfunktio on sellainen funktio, että <span class="math notranslate nohighlight">\((f \circ f^{-1}) (x) = x\)</span>. Käänteisfunktio on olemassa ainoastaan silloin, kun funktio on aidosti kasvava tai aidosti vähenevä. Tällöin funktio voi saada tietyn arvon vain yhdellä muuttujan arvolla. Esimerkiksi funktiolla <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> ei ole käänteisfunktiota, sillä esimerkiksi <span class="math notranslate nohighlight">\(f(-2)\)</span> ja <span class="math notranslate nohighlight">\(f(2)\)</span> tuottavat saman arvon <span class="math notranslate nohighlight">\(4\)</span>. Tällöin ei ole olemassa yksikäsitteistä muuttujan arvoa <span class="math notranslate nohighlight">\(x\)</span>, joka vastaisi funktion arvoa <span class="math notranslate nohighlight">\(4\)</span>.</p>
+<p>Käänteisfunktion lausekkeen saa selville seuraavasti: merkitään <span class="math notranslate nohighlight">\(f(x)=y\)</span> ja sitten ratkaistaan funktion lausekkeesta muuttuja <span class="math notranslate nohighlight">\(x\)</span>. Tämä on sama asia kuin <span class="math notranslate nohighlight">\(f{-1}(x)\)</span>. Lopuksi voidaan vaihtaa käänteisfunktion lausekkeeseen muuttujan <span class="math notranslate nohighlight">\(y\)</span> paikalle takaisin muuttuja <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Määritä seuraavien funktioiden käänteisfunktiot:</p>
+<p>a) <span class="math notranslate nohighlight">\(f(x)=3x+2\)</span></p>
+<p>b) <span class="math notranslate nohighlight">\(f(x)= 4 x^3\)</span></p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>a) Merkitään <span class="math notranslate nohighlight">\(y=3x+2\)</span> ja ratkaistaan tästä <span class="math notranslate nohighlight">\(x=\frac{y-2}{3}\)</span>. Siis <span class="math notranslate nohighlight">\(f^{-1}(x)=\frac{x-2}{3}\)</span>.</p>
+<p>Tarkistetaan vielä laskemalla <span class="math notranslate nohighlight">\((f \circ f^{-1}) (x)\)</span>:</p>
+<p><span class="math notranslate nohighlight">\((f \circ f^{-1}) (x) = 3(\frac{x-2}{3})+2 = x-2+2 = x\)</span></p>
+<p>b) Merkitään <span class="math notranslate nohighlight">\(y=4x^3\)</span> ja ratkaistaan tästä <span class="math notranslate nohighlight">\(x=\sqrt[3]{\frac{y}{4}}\)</span>. Siis <span class="math notranslate nohighlight">\(f^{-1}(x)=\sqrt[3]{\frac{x}{4}}\)</span>.</p>
+<p>Tarkistetaan vielä laskemalla <span class="math notranslate nohighlight">\((f \circ f^{-1}) (x)\)</span>:</p>
+<p><span class="math notranslate nohighlight">\((f \circ f^{-1}) (x) = 4(\sqrt[3]{\frac{x}{4}})^3 = 4 \frac{x}{4} = x\)</span></p>
+</div>
+</div>
+</section>
+<section id="funktion-siirto-peilaus-ja-skaalaus">
+<h2>Funktion siirto, peilaus ja skaalaus<a class="headerlink" href="#funktion-siirto-peilaus-ja-skaalaus" title="Permalink to this headline">#</a></h2>
+<p><strong>Funktion siirto</strong> tarkoittaa käytännössä funktion kuvaajan siirtoa koordinaatistossa vasemmalle, oikealle, ylös tai alas.</p>
+<p>Laskennallisesti funktion siirto vaakasuunnassa <span class="math notranslate nohighlight">\(a\)</span> yksikön verran tapahtuu lisäämällä muuttujan arvoon luku <span class="math notranslate nohighlight">\(a\)</span>. Jos <span class="math notranslate nohighlight">\(a &lt; 0\)</span>, niin kuvaaja siirtyy oikealle, ja jos <span class="math notranslate nohighlight">\(a &gt; 0\)</span>, kuvaaja siirtyy vasemmalle. Siirtoa vaakasuunnassa voidaan kuvata siirtofunktiolla <span class="math notranslate nohighlight">\(s(x)=x+a\)</span>, jolloin siirretty funktio on yhdistetty funktio <span class="math notranslate nohighlight">\((f\circ s)(x)\)</span> eli <span class="math notranslate nohighlight">\(f(s(x))\)</span>. Kuvassa on esimerkki vasemmalle ja oikealle siirretystä funktiosta.</p>
+<p><img alt="Vaakasuunnassa siirretty funktio" src="_images/vasen_oikea.png" /></p>
+<p>Pystysuuntainen siirto tapahtuu lisäämällä funktion lausekkeeseen haluttu siirron määrä <span class="math notranslate nohighlight">\(b\)</span>. Jos <span class="math notranslate nohighlight">\(b &gt; 0\)</span>, niin kuvaaja siirtyy ylöspäin, ja jos <span class="math notranslate nohighlight">\(b &lt; 0\)</span>, niin kuvaaja siirtyy alaspäin.</p>
+<p><img alt="Pystysuunnassa siirretty funktio" src="_images/ylos_alas.png" /></p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Siirrä funktiota <span class="math notranslate nohighlight">\(f(x)=3x^2+2x\)</span> 4 askelta oikealle ja 2 askelta ylöspäin.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Siirto oikealle tapahtuu funktion <span class="math notranslate nohighlight">\(s(x)=x-4\)</span> avulla. Oikealle siirretty funktio on <span class="math notranslate nohighlight">\(f(s(x))=f(x-4)=3(x-4)^2+2(x-4) \)</span> ja sievennetyssä muodossa <span class="math notranslate nohighlight">\(f(x)= 3(x^2-8x+16)+2(x-4) = 3x^2-24x+48+2x-8 = 3x^2-22x+40\)</span>. Lisäksi funktioon pitää lisätä ylöspäin nostamisen määrä 2, joten siirretty funktio on <span class="math notranslate nohighlight">\(h(x)=3x^2-22x+42\)</span>.</p>
+</div>
+</div>
+<p><strong>Funktion skaalaus</strong> eli venytys voidaan suorittaa funktiolla <span class="math notranslate nohighlight">\(v(x)=ax\)</span>. Jos halutaan skaalata kaikki funktion arvot kertoimella <span class="math notranslate nohighlight">\(a\)</span>, niin skaalattu funktio saadaan laskemalla <span class="math notranslate nohighlight">\((v \circ f) (x)\)</span>. Alkuperäisen funktion on siis oltava yhdistetyn funktion sisäfunktiona. Skaalauksen yhteydessä funktiolle tapahtuu myös <strong>peilaus</strong> <span class="math notranslate nohighlight">\(x\)</span>-akselin suhteen, jos skaalauskerroin on negatiivinen eli <span class="math notranslate nohighlight">\(a &lt; 0\)</span>.</p>
+<p><img alt="Pystysuunnassa skaalattu funktio" src="_images/skaalattu_pystysuunnassa.png" /></p>
+<p>Jos taas lasketaan <span class="math notranslate nohighlight">\((f \circ a) (x)\)</span>, saadaan funktio, jota on venytetty vaaka-akselin suunnassa. Esimerkiksi suora <span class="math notranslate nohighlight">\(f(x)=6x+1\)</span> skaalattuna vaakasuunnassa kertoimella <span class="math notranslate nohighlight">\(2\)</span> olisi <span class="math notranslate nohighlight">\(f(2x)=6\cdot 2x+1=12x+1\)</span> eli tuloksena oleva funktio kasvaa kaksi kertaa niin nopeasti kuin alkuperäinen funktio. Lisäksi jos tässä tapauksessa <span class="math notranslate nohighlight">\(a &lt; 0\)</span>, niin funktion kuvaaja peilautuu <span class="math notranslate nohighlight">\(y\)</span>-akselin suhteen.</p>
+<p><img alt="Vaakasuunnassa skaalattu funktio" src="_images/skaalattu_vaakasuunnassa.png" /></p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Tarkastele funktiota <span class="math notranslate nohighlight">\(f(x)=2x+1\)</span> ja skaalausfunktioita <span class="math notranslate nohighlight">\(v(x)=3x\)</span> ja <span class="math notranslate nohighlight">\(w(x)=-3x\)</span>.</p>
+<p>Laske <span class="math notranslate nohighlight">\(f \circ v\)</span>, <span class="math notranslate nohighlight">\(v \circ f\)</span>, <span class="math notranslate nohighlight">\(f \circ w\)</span> ja <span class="math notranslate nohighlight">\(w \circ f\)</span>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p><span class="math notranslate nohighlight">\((f \circ v)(x) = 2(3x)+1 = 6x+1\)</span></p>
+<p><span class="math notranslate nohighlight">\((v \circ f)(x) = 3(2x+1) = 6x+3\)</span></p>
+<p><span class="math notranslate nohighlight">\((f \circ w)(x) = 2(-3x)+1 = -6x+1\)</span></p>
+<p><span class="math notranslate nohighlight">\((w \circ f)(x) = -3(2x+1) = -6x-3\)</span></p>
+<p>Piirrä funktioiden kuvaajat esimerkiksi <a class="reference external" href="https://www.geogebra.org/">GeoGebralla</a>, niin näet, mitä eri versiot yhdistetystä funktiosta käytännössä tekevät funktiolle.</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Johdanto</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="rajaarvo.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funktion raja-arvo</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
