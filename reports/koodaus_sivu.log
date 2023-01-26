@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "C:\Users\minnkorh\AppData\Roaming\Python\Python39\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\minnkorh\Anaconda3\envs\oppimateriaaliprojekti\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\minnkorh\Anaconda3\envs\oppimateriaaliprojekti\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\minnkorh\Anaconda3\envs\oppimateriaaliprojekti\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\minnkorh\Anaconda3\envs\oppimateriaaliprojekti\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\minnkorh\Anaconda3\envs\oppimateriaaliprojekti\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\minnkorh\Anaconda3\envs\oppimateriaaliprojekti\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\minnkorh\Anaconda3\envs\oppimateriaaliprojekti\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from sympy import Function, Symbol
+from sympy.plotting import plot
+x = Symbol('x')
+
+# Mitä funktiota siirretään?
+f = 4*x**2+2
+
+# Kuinka paljon siirretään vaakasuunnassa?
+a = 3
+
+# Kuinka paljon siirretään pystysuunnassa?
+b = 4
+
+# Siirretty funktio: korvataan x luvulla x+a, ja lisätään b
+g=f.subs(x,x+a)+b
+
+# Komennot xlim ja ylim  säätävät piirtoalueen rajoja, voit muokata niitä
+# Komennot voi myös poistaa, tällöin piirtoalue skaalautuu automaattisesti
+x1, x2 = -5, 5
+y1, y2 = 0, 10
+
+# Komento p1.extend(p2) yhdistää kuvaajat ja komento p1.show() näyttää ne samassa kuvassa
+# Komento show=False aiheuttaa sen, että ei tule kahta erillistä kuvaa
+p1=plot(f, xlim=(x1, x2), ylim=(y1, y2), show=False)
+p2=plot(g, xlim=(x1, x2), ylim=(y1, y2), show=False, line_color="g")
+p1.extend(p2)
+p1.show()
+
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 1>[1;34m()[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msympy[39;00m [38;5;28;01mimport[39;00m Function, Symbol
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01msympy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting[39;00m [38;5;28;01mimport[39;00m plot
+[0;32m      3[0m x [38;5;241m=[39m Symbol([38;5;124m'[39m[38;5;124mx[39m[38;5;124m'[39m)
+
+[1;31mModuleNotFoundError[0m: No module named 'sympy'
+ModuleNotFoundError: No module named 'sympy'
+
