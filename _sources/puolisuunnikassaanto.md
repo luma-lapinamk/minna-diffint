@@ -2,13 +2,13 @@
 
 Puolisuunnikassääntö on eräs numeerisen integroinnin menetelmä. Numeerinen integrointi tarkoittaa tässä yhteydessä sitä, että lasketaan funktion määrätyn integraalin arvo, vaikka funktion lauseke ei ole tiedossa. Menetelmää voi käyttää myös silloin, kun funktion lauseke on sellainen, että sitä on vaikeaa tai mahdotonta integroida.
 
-(TÄHÄN PÄIVITTYY KUVA!)
+![Puolisuunnikassäännön periaate](puolisuunnikkaat.png)
 
-Aloitetaan jakamalla tuntemattoman funktion $f(x)$ kuvaajan ja $x$-akselin väliin jäävä alue yhtä leveisiin osiin. Jos osia on $n$ kappaletta, niin jokaisen osan leveys on
+Aloitetaan jakamalla tuntemattoman funktion $f(x)$ kuvaajan ja $x$-akselin jäävä alue välillä $x_1 \dots x_2$ yhtä leveisiin osiin. Jos osia on $n$ kappaletta, niin jokaisen osan leveys on
 
 $h=\frac{x_2-x_1}{n}$.
 
-Approksimoidaan funktion kuvaajan ja $x$-akselin väliin jääviä alueita $A_1, A_2, \dots A_n$ puolisuunnikkaina. Puolisuunnikkaan $A_i$ vasemman reunan korkeus on $f(x_1+(i-1)h)$ ja oikean reunan korkeus on $f(x_1+ih)$. Siis esimerkiksi alueen $A_1$ vasemman reunan korkeus on $f(x_1)$ ja oikean reunan korkeus on $f(x_1+h)=f(x_2)$.
+Approksimoidaan funktion kuvaajan ja $x$-akselin väliin jääviä alueita $A_1, A_2, \dots A_n$ puolisuunnikkaina. Puolisuunnikkaan $A_i$ vasemman reunan korkeus on $f(x_1+(i-1)h)$ ja oikean reunan korkeus on $f(x_1+ih)$. Siis esimerkiksi alueen $A_1$ vasemman reunan korkeus on $f(x_1)$ ja oikean reunan korkeus on $f(x_1+h)$.
 
 Edelleen voidaan kirjoittaa puolisuunnikkaan $A_i$ pinta-ala: $A_i=\frac{f(x_1+(i-1)h)+f(x_1+ih)}{2}h$
 

@@ -222,11 +222,6 @@ const thebe_selector_output = ".output, .cell_output"
    Testailusivu
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fourier_muunnos.html">
-   Fourier-muunnos
-  </a>
- </li>
 </ul>
 
     </div>
@@ -377,10 +372,10 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="puolisuunnikassaanto">
 <h1>Puolisuunnikassääntö<a class="headerlink" href="#puolisuunnikassaanto" title="Permalink to this headline">#</a></h1>
 <p>Puolisuunnikassääntö on eräs numeerisen integroinnin menetelmä. Numeerinen integrointi tarkoittaa tässä yhteydessä sitä, että lasketaan funktion määrätyn integraalin arvo, vaikka funktion lauseke ei ole tiedossa. Menetelmää voi käyttää myös silloin, kun funktion lauseke on sellainen, että sitä on vaikeaa tai mahdotonta integroida.</p>
-<p>(TÄHÄN PÄIVITTYY KUVA!)</p>
-<p>Aloitetaan jakamalla tuntemattoman funktion <span class="math notranslate nohighlight">\(f(x)\)</span> kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin jäävä alue yhtä leveisiin osiin. Jos osia on <span class="math notranslate nohighlight">\(n\)</span> kappaletta, niin jokaisen osan leveys on</p>
+<p><img alt="Puolisuunnikassäännön periaate" src="_images/puolisuunnikkaat.png" /></p>
+<p>Aloitetaan jakamalla tuntemattoman funktion <span class="math notranslate nohighlight">\(f(x)\)</span> kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin jäävä alue välillä <span class="math notranslate nohighlight">\(x_1 \dots x_2\)</span> yhtä leveisiin osiin. Jos osia on <span class="math notranslate nohighlight">\(n\)</span> kappaletta, niin jokaisen osan leveys on</p>
 <p><span class="math notranslate nohighlight">\(h=\frac{x_2-x_1}{n}\)</span>.</p>
-<p>Approksimoidaan funktion kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin jääviä alueita <span class="math notranslate nohighlight">\(A_1, A_2, \dots A_n\)</span> puolisuunnikkaina. Puolisuunnikkaan <span class="math notranslate nohighlight">\(A_i\)</span> vasemman reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1+(i-1)h)\)</span> ja oikean reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1+ih)\)</span>. Siis esimerkiksi alueen <span class="math notranslate nohighlight">\(A_1\)</span> vasemman reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1)\)</span> ja oikean reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1+h)=f(x_2)\)</span>.</p>
+<p>Approksimoidaan funktion kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin jääviä alueita <span class="math notranslate nohighlight">\(A_1, A_2, \dots A_n\)</span> puolisuunnikkaina. Puolisuunnikkaan <span class="math notranslate nohighlight">\(A_i\)</span> vasemman reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1+(i-1)h)\)</span> ja oikean reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1+ih)\)</span>. Siis esimerkiksi alueen <span class="math notranslate nohighlight">\(A_1\)</span> vasemman reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1)\)</span> ja oikean reunan korkeus on <span class="math notranslate nohighlight">\(f(x_1+h)\)</span>.</p>
 <p>Edelleen voidaan kirjoittaa puolisuunnikkaan <span class="math notranslate nohighlight">\(A_i\)</span> pinta-ala: <span class="math notranslate nohighlight">\(A_i=\frac{f(x_1+(i-1)h)+f(x_1+ih)}{2}h\)</span></p>
 <p>Koko alueen pinta-ala, eli määrätty integraali välillä <span class="math notranslate nohighlight">\(x_1 \leq x \leq x_2\)</span>, saadaan summana kaikkien puolisuunnikkaiden pinta-aloista: <span class="math notranslate nohighlight">\(\Sigma_{i=1}^n A_i\)</span>.</p>
 <p>Tietokoneella laskettaessa puolisuunnikkaita voi olla hyvinkin suuri määrä, sillä pinta-alojen laskun voi automatisoida. Valmiitakin työkaluja puolisuunnikassäännön käyttöön on olemassa. Seuraavissa esimerkeissä puolisuunnikkaita on vain muutamia. Mitä useammalla puolisuunnikkalla aluetta approksimoidaan, sitä lähemmäs todellista arvoa laskussa päästään.</p>

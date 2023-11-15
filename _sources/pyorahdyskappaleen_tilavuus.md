@@ -68,25 +68,6 @@ Kun pyörähdyskappaletta rajoittaa funktio $f(x)$ välillä $x_1 \leq x \leq x_
 $A=2\pi \int_{x_1}^{x_2} |f(x)|\sqrt{1+[f'(x)]^2}~\text{d}x$
 
 
-:::{admonition} Perustelu
-:class: tip, dropdown
-täydentyy
-:::
-
-::::{admonition} Esimerkki
-
-täydentyy
-
-:::{admonition} Ratkaisu
-:class: tip, dropdown
-
-Täydentyy
-
-:::
-
-::::
-
-
 
 
 
