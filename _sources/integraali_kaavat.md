@@ -16,7 +16,7 @@ Seuraavaksi esitellään kaavat, joilla onnistuu yksinkertaisten funktioiden int
 
 ## Perusfunktioiden integrointi
 
-- Vakiofunktio: $\int ax~\text{d}x = ax+C$
+- Vakiofunktio: $\int a~\text{d}x = ax+C$
 
 - Potenssifunktio $(n \neq -1)$: $\int x^n~\text{d}x = \frac{1}{n+1}x^{n+1} + C$
 
@@ -56,7 +56,7 @@ $\int x^{\frac{1}{2}}~\text{d}x = \frac{1}{\frac{1}{2}+1}x^{\frac{1}{2}+1} = \fr
 
 ## Yhdistetyn funktion integrointi
 
-- Summan integraali: $\int f(x) + g(x) ~\text{d}x = \int f(x) ~\text{d}x+\int f(x) ~\text{d}x$
+- Summan integraali: $\int f(x) + g(x) ~\text{d}x = \int f(x) ~\text{d}x+\int g(x) ~\text{d}x$
 
 - Vakiolla kerrotun funktion integraali: $\int af(x)~\text{d}x=a\int f(x)~\text{d}x$
 
