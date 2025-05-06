@@ -19,6 +19,36 @@ Lukujoukkoja voidaan ilmaista eri tavoin:
 - Merkintä $[0,10[$ tarkoittaa joukkoa, joka sisältää kaikki vähintään nollan suuruiset, mutta lukua 10 pienemmät luvut, eikä itse lukua 10. 
 - Merkintä $x \in ]-\infty, 2]$ tarkoittaa samaa kuin $x \leq 2$. Äärettömän ja miinus äärettömän viereinen hakasulku on aina "väärin päin", eli luku $x$ ei voi olla äärettömän suuri tai pieni.
 
+Funktioista käytetään usein merkintätapaa "_nimi: määrittelyjoukko -> arvojoukko_", esimerkiksi $f: \Re^+ \rightarrow \Re$ on funktio, jonka määrittelyjoukko koostuu positiivisista reaaliluvuista ja arvojoukko kaikista reaaliluvuista. Lukujoukot ja niiden lyhenteet voit kerrata [algebran oppimateriaalista](https://luma-lapinamk.github.io/minna-agt/lukujoukot.html). 
+
+::::{admonition} Esimerkki
+
+Mikä voisi olla funktion lauseke ja mitkä ovat funktioiden määrittely- ja arvojoukot, kun funktio kuvaa
+
+a) juhliin tietylle vierasmäärälle tarvittavien karjalanpiirakoiden määrää?\
+b) juhliin tietylle vierasmäärälle varattavan keiton määrää?\
+c) auton pysäyttämiseen tarvittavaa matkaa tietystä alkunopeudesta?\
+d) Celsius- ja Fahrenheit -asteikolla ilmoitettujen lämpötilojen välistä yhteyttä?
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+a) Marttaliiton [ohjeiden](https://www.martat.fi/teemat/kodin-juhlat/paljonko-tarjottavaa/) mukaisesti karjalanpiirakoita pitää varata 1-2 kappaletta / vieras. Jos varataan 2 kappaletta ja vierasmäärää merkitään $x$, niin funktio olisi $f(x)=2x$. Määrittelyjoukkoon kelpaavat vain kokonaiset ihmiset eli luonnolliset luvut (eli positiiviset kokonaisluvut) ja myös arvojoukko koostuu luonnollisista luvuista eli kokonaisista karjalanpiirakoista.
+
+b) Keittoa pitäisi varata 2.3-3.0 dl/vieras. Esimerkiksi 2.5 desilitralla saadaan siis funktio $f(x)=2.5x$. Määrittelyjoukko koostuu taas luonnollisista luvuista, mutta arvojoukkoon kuuluu myös desimaalilukuja, eli arvojoukko koostuu positiivisista rationaaliluvuista.
+
+c) Auton nopeudet ovat positiivisia lukuja, kuten myös jarrutusmatkat. Käytännössä nopeudet (yksikössä km/h) ovat kokonaislukuja, kuten myös jarrutusmatkat (yksikössä metri). 
+
+Erään rengasliikkeen mukaan pysähtymismatka on "reaktiomatka + jarrutusmatka". Reaktiomatka on matka, joka edetään, kun kuljettaja on havainnut esimerkiksi edessä olevan esteen, mutta ei ole vielä ehtinyt painaa jarrupoljinta. Se lasketaan siten, että nopeus jaetaan kymmenellä ja kerrotaan kolmella. Jarrutusmatka taas lasketaan kertomalla nopeus itsellään ja sitten vielä luvulla 0.4. 
+
+Jos siis alkunopeutta merkitään $x$, niin jarrutusmatka olisi $f(x)=\frac{3x}{10}+0.4x^2$. Aiheeseen liittyvät fysiikan kaavat ovat eri näköisiä ja sisältävät muuttujana myös olosuhteita kuvaavan kitkakertoimen.
+
+d) Muunnoskaavaksi näiden välille löytyy netistä hakemalla esimerkiksi $C\cdot 1.8 + 32 = F$. Jos siis merkitään Celsius-lämpötilaa $x$ ja muunnosfunktiota $f$, niin $f(x)=1.8x+32$. Jos taas muunnetaan funktiolla $g$ Fahrenheit-lukema $x$ Celsius-asteikolle, niin funktion lauseke on $g(x)=\frac{x-32}{1.8}$. Kumpikin lämpötila voi saada sekä positiivisia että negatiivisia reaaliarvoja (käytännössä tosin fysiikan lait määrittävät alarajan eli absoluuttisen nollapisteen).
+
+:::
+
+::::
+
 ::::{admonition} Esimerkki
 
 Määritä seuraavien funktioiden määrittely- ja arvojoukot:
@@ -120,46 +150,6 @@ Tulos ei ole sama kuin $f(x)$ eikä $-f(x)=-x^2-x-2$, joten funktio ei ole parit
 
 ::::
 
-## Yhdistetty funktio
-
-Olkoot funktiot $f(x)$ ja $g(x)$. Näistä voidaan muodostaa yhdistetty funktio, jota merkitään $(f \circ g) (x)$ siten, että lasketaan ensin funktion arvo $g(x)$ ja sijoitetaan se sitten funktion $f(x)$ muuttujaksi. Toisin sanoen $(f \circ g) (x) = f(g(x))$.
-
-Funktiota $f$ nimitetään ulkofunktioksi ja funktiota $g$ sisäfunktioksi. Yleisesti ottaen funktioiden järjestyksellä on väliä, siis $(f \circ g)(x) = (g \circ f)(x)$ pitää paikkansa vain erikoistapauksissa.
-
-::::{admonition} Esimerkki
-
-Muodosta $(f \circ g) (x)$ ja $(g \circ f) (x)$, kun $f(x)=3x$ ja $g(x)=x+1$.
-
-Laske lisäksi arvot $(f\circ g) (2)$ ja $(g \circ f) (2)$.
-
-:::{admonition} Ratkaisu
-:class: tip, dropdown
-
-$(f\circ g) (x)= 3(x+1)=3x+3, (f\circ g) (2) = 6+3 = 9$  
-
-$(g \circ f) (x) = (3x) + 1 = 3x+1, (g \circ f) (2) = 6+1 = 7$
-
-:::
-
-::::
-
-::::{admonition} Esimerkki
-
-Muodosta $(f \circ g) (x)$ ja $(g \circ f) (x)$, kun $f(x)=2x$ ja $g(x)=\frac{x}{3}$. 
-
-Laske lisäksi arvot $(f\circ g) (1)$ ja $(g \circ f) (1)$.
-
-:::{admonition} Ratkaisu
-:class: tip, dropdown
-
-$(f\circ g) (x)= 2\cdot \frac{x}{3} = \frac{2x}{3}, (f\circ g) (1) = \frac{2\cdot 1}{3} = \frac{2}{3}$  
-
-$(g \circ f) (x) = \frac{2x}{3}, (g \circ f) (1) = \frac{2\cdot1}{3} =\frac{2}{3}$
-
-:::
-
-::::
-
 ## Käänteisfunktio
 
 Funktiolla $f(x)$ voi olla olemassa käänteisfunktio $f^{-1}(x)$. Käänteisfunktio on sellainen funktio, että $(f \circ f^{-1}) (x) = x$. Käänteisfunktio on olemassa ainoastaan silloin, kun funktio on aidosti kasvava tai aidosti vähenevä. Tällöin funktio voi saada tietyn arvon vain yhdellä muuttujan arvolla. Esimerkiksi funktiolla $f(x)=x^2$ ei ole käänteisfunktiota, sillä esimerkiksi $f(-2)$ ja $f(2)$ tuottavat saman arvon $4$. Tällöin ei ole olemassa yksikäsitteistä muuttujan arvoa $x$, joka vastaisi funktion arvoa $4$.
@@ -193,9 +183,55 @@ Tarkistetaan vielä laskemalla $(f \circ f^{-1}) (x)$:
 
 ::::
 
+## Yhdistetty funktio
+
+Olkoot funktiot $f(x)$ ja $g(x)$. Näistä voidaan muodostaa yhdistetty funktio, jota merkitään $(f \circ g) (x)$ siten, että funktio $g(x)$ sijoitetaan funktion $f(x)$ muuttujaksi. Käytännössä siis funktion $g(x)$ lauseke sijoitetaan funktioon $f$ muuttujan $x$ paikalle ja suoritetaan sille ne laskutoimitukset, jotka funktiossa $f$ suoritetaan muuttujalle $x$. Toisin sanoen $(f \circ g) (x) = f(g(x))$.
+
+Funktiota $f$ nimitetään ulkofunktioksi ja funktiota $g$ sisäfunktioksi. Yleisesti ottaen funktioiden järjestyksellä on väliä, siis $(f \circ g)(x) = (g \circ f)(x)$ pitää paikkansa vain erikoistapauksissa.
+
+Yhdistetty funktio on tärkeä käsite, koska esimerkiksi valmiita derivointikaavoja on olemassa vain tietyille perusfunktioille. Niiden lisäksi on kuitenkin yleisessä muodossa olevia laskukaavoja yhdistetyille funktioille. Käytännössä monet insinöörialoilla käytettävät funkiot ovat perusfunktioista yhdistettyjä funktioita. On siis opeteltava tunnistamaan yhdistetyt funktiot sekä se, mikä on yhdistetyn funktion sisäfunktio ja mikä ulkofunktio. Aluksi sitä on helpompaa harjoitella muodostamalla yhdistetty funktio annetuista sisä- ja ulkofunktiosta.
+
+::::{admonition} Esimerkki
+
+Muodosta $(f \circ g) (x)$ ja $(g \circ f) (x)$, kun $f(x)=3x$ ja $g(x)=x+1$.
+
+Laske lisäksi arvot $(f\circ g) (2)$ ja $(g \circ f) (2)$.
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+$(f\circ g) (x)= 3(x+1)=3x+3, (f\circ g) (2) = 3\cdot 2+3 = 9$  
+
+$(g \circ f) (x) = (3x) + 1 = 3x+1, (g \circ f) (2) = 3\cdot 2+1 = 7$
+
+:::
+
+::::
+
+::::{admonition} Esimerkki
+
+Muodosta $(f \circ g) (x)$ ja $(g \circ f) (x)$, kun $f(x)=2x$ ja $g(x)=\frac{x}{3}$. 
+
+Laske lisäksi arvot $(f\circ g) (1)$ ja $(g \circ f) (1)$.
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+$(f\circ g) (x)= 2\cdot \frac{x}{3} = \frac{2x}{3}, (f\circ g) (1) = \frac{2\cdot 1}{3} = \frac{2}{3}$  
+
+$(g \circ f) (x) = \frac{2x}{3}, (g \circ f) (1) = \frac{2\cdot 1}{3} =\frac{2}{3}$
+
+Yhdistetyn funktion arvoja voi laskea myös sillä tavalla, että selvittää ensin sisäfunktion arvon ja sijoittaa sen sitten ulkofunktioon. Ensimmäisessä tapauksessa $f\circ g$ siis laskettaisiin ensin $g(1)=\frac{1}{3}$ ja sitten lasketaan $f(\frac{1}{3})=2\cdot \frac{1}{3}=\frac{2}{3}$. Tapauksessa $g \circ f$ lasketaan ensin $f(1)=2\cdot 1$ ja sitten $g(2)=\frac{2}{3}$.
+
+:::
+
+::::
+
+
+
 ## Funktion siirto, peilaus ja skaalaus
 
-**Funktion siirto** tarkoittaa käytännössä funktion kuvaajan siirtoa koordinaatistossa vasemmalle, oikealle, ylös tai alas. 
+**Funktion siirto** tarkoittaa käytännössä funktion kuvaajan siirtoa koordinaatistossa vasemmalle, oikealle, ylös tai alas. Matemaattisesti kyse on yhdistetyn funktion muoodostamisesta.
 
 Laskennallisesti funktion siirto vaakasuunnassa $a$ yksikön verran tapahtuu lisäämällä muuttujan arvoon luku $a$. Jos $a < 0$, niin kuvaaja siirtyy oikealle, ja jos $a > 0$, kuvaaja siirtyy vasemmalle. Siirtoa vaakasuunnassa voidaan kuvata siirtofunktiolla $s(x)=x+a$, jolloin siirretty funktio on yhdistetty funktio $(f\circ s)(x)$ eli $f(s(x))$. Kuvassa on esimerkki vasemmalle ja oikealle siirretystä funktiosta.
 
@@ -248,3 +284,36 @@ Piirrä funktioiden kuvaajat esimerkiksi [GeoGebralla](https://www.geogebra.org/
 :::
 
 ::::
+
+::::{admonition} Esimerkki
+
+Auringon magneettisen toiminnan voimakkuus liittyy auringon pinnalla havaittavien auringonpilkkujen määrään. Auringon aktiivisuus ja siten myös auringonpilkkujen määrää vaihtelee noin 11 vuoden jaksoissa. Erään matemaattisen mallin mukaan auringonpilkkujen määrää vuonna $x$ kuvaa funktio $f(x)=57.7 \sin{(0.602(x-1.43))}+58.8$. Perusfunktiona tässä ilmiössä on $\sin{x}$. Millä tavalla luvut 57.7, 0.602, -1.43 ja 58.8 muokkaavat sinifunktiota? Tarkastele funktiota piirtämällä kuvaaja $\sin{x}$ ja lisäämällä siihen näitä lukuja yksi kerrallaan.
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+Pystysuuntaiset muutokset on helpompi havaita kuin vaakasuuntaiset. Funktion $f(x)=\sin{x}+58.8$ kuvaaja kulkee 58.8 yksikköä ylempänä kuin alkuperäinen $\sin{x}$, eli vakio 58.8 *siirtää* funktiota pystysuunnassa. Kerroin 57.7 funktiossa $f(x)=57.7 \sin{x}+58.8$ skaalaa kaikki funktion arvot 57.7-kertaisiksi eli *venyttää* funktiota pystysuunnassa.
+
+Vaakasuuntainen *venytys* tapahtuu kertomalla muuttuja $x$ luvulla 0.602. Vaakasuuntainen *siirto* tapahtuu, kun muuttujasta vähennetään luku 1.43.
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

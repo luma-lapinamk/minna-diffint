@@ -136,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Asymptootit
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eksponenttifunktio.html">
+   Logaritmit ja eksponenttiyhtälöt
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -210,16 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
    Puolisuunnikassääntö
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Muuta
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="eksponenttifunktio.html">
-   Logaritmit ja eksponenttiyhtälöt
+  <a class="reference internal" href="tilastomatematiikkaa.html">
+   Tilastomatematiikkaa
   </a>
  </li>
 </ul>
@@ -427,6 +425,17 @@ title="Print to PDF"
 <p><span class="math notranslate nohighlight">\(\int_a^b \pi f(x)^2~\text{d}x\)</span></p>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
+<p>On kaadettu iso puu, jonka poikkileikkaus on ympyrä. Puu on tyvestä leveämpi ja latvasta ohuempi. Rungon sädettä (yksikössä cm) korkeudella <span class="math notranslate nohighlight">\(x\)</span> tyvestä mitattuna voidaan kuvata funktiolla <span class="math notranslate nohighlight">\(f(x)=10-0.01x\)</span> eli säde on alhaalla 10 cm ja pienenee aina metrin matkalla 1 cm. Mikä on puunrungon tilavuus tyvestä 300 cm korkeudelle?</p>
+<p>Piirrä funktio vaikkapa GeoGebralla. Kuvaajassa puu on maassa kyljellään, ja <span class="math notranslate nohighlight">\(x\)</span>-akseli kulkee sen läpi rungon keskellä pituussuunnassa.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Jos runko sahattaisiin likimain tasapaksuiksi kiekoiksi, niin voitaisiin määrittää jokaisen kiekon tilavuus siten, että mitataan jokaisen kiekon säde <span class="math notranslate nohighlight">\(f(x)\)</span> ja paksuus <span class="math notranslate nohighlight">\(\Delta x\)</span> ja sitten lasketaan <span class="math notranslate nohighlight">\(\pi [f(x)]^2 \Delta x\)</span>. Sitten laskettaisiin kiekkojen tilavuudet yhteen. Tarkan tilavuuden määrittämiseksi tarvittaisiin äärettömän monta, äärettömän ohutta kiekkoa eli käytännössä kasa sahanpurua. Integraalilaskennalla tilavuuden <span class="math notranslate nohighlight">\(V\)</span> määritys on helpompaa:</p>
+<p><span class="math notranslate nohighlight">\(V=\int_0^{300} \pi (10-0.01x)^2~\text{d}x = 68801\)</span> (yksikkönä cm<span class="math notranslate nohighlight">\(^3\)</span>, eli 0.07 m<span class="math notranslate nohighlight">\(^3\)</span>)</p>
+<p>Puiden tilavuuksia määritetään metsäalalla eri menetelmillä kuin tällä, esimerkiksi <a class="reference external" href="https://ak.maanmittauslaitos.fi/2019/metsatalous/yksittaisen-puun-tilavuuden-ja-arvon-maarittaminen">tilavuusyhtälöiden</a> avulla. Metsäkoneet voivat laskea puun tilavuutta paikan päällä esimerkiksi mittaamalla rungon halkaisijan muutaman senttimetrin välein ja käsitelemällä näitä pätkiä katkaistun kartion laskukaavoilla.</p>
+</div>
+</div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
 <p>Kartion tilavuuden laskukaava on <span class="math notranslate nohighlight">\(V=\frac{1}{3} \pi r^2 h\)</span>, missä <span class="math notranslate nohighlight">\(r\)</span> on kartion pohjaympyrän säde ja <span class="math notranslate nohighlight">\(h\)</span> on kartion korkeus. Johda tilavuuden laskukaava integroimalla. Kuvassa on esitetty kartion seinämän muodostavan funktion kuvaaja. Kartio on kyljellään siten, että sen kärki on pisteessä (0,0).</p>
 <p><img alt="Kartion tilavuus" src="_images/kartio.png" /></p>
 <div class="tip dropdown admonition">
@@ -515,7 +524,7 @@ V &amp; = \int_0^2 \pi (e^x)^2~\text{d}x \\
   
     By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2025.<br/>
 </p>
         </footer>
     </div>

@@ -136,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Asymptootit
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eksponenttifunktio.html">
+   Logaritmit ja eksponenttiyhtälöt
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -210,16 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
    Puolisuunnikassääntö
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Muuta
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="eksponenttifunktio.html">
-   Logaritmit ja eksponenttiyhtälöt
+  <a class="reference internal" href="tilastomatematiikkaa.html">
+   Tilastomatematiikkaa
   </a>
  </li>
 </ul>
@@ -345,12 +343,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pinta-aloja-ja-muita-esimerkkeja">
+   Pinta-aloja ja muita esimerkkejä
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epaoleellinen-integraali">
+   Epäoleellinen integraali
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -362,6 +389,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pinta-aloja-ja-muita-esimerkkeja">
+   Pinta-aloja ja muita esimerkkejä
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epaoleellinen-integraali">
+   Epäoleellinen integraali
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -371,15 +416,17 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="maaratty-integraali">
 <h1>Määrätty integraali<a class="headerlink" href="#maaratty-integraali" title="Permalink to this headline">#</a></h1>
-<p>Määrätty integraali on sovellustehtävissä hyödyllinen käsite. Määrätyn integraalin laskemiseen valitaan tarvitaan ensin funktion <span class="math notranslate nohighlight">\(f(x)\)</span> integraalifunktio <span class="math notranslate nohighlight">\(F(x)\)</span>. Sitten valitaan kaksi pistettä <span class="math notranslate nohighlight">\(x_1\)</span> ja <span class="math notranslate nohighlight">\(x_2\)</span>. Lasketaan integraalifunktion arvot näissä pisteissä, siis <span class="math notranslate nohighlight">\(F(x_1)\)</span> ja <span class="math notranslate nohighlight">\(F(x_2)\)</span>. Lopuksi lasketaan näiden arvojen erotus: <span class="math notranslate nohighlight">\(F(x_2)-F(x_1)\)</span>. Määrätyn integraalin laskemisesta tuloksena on siis luku, ei lauseke.</p>
+<p>Määrätyllä integraalilla on paljon sovelluksia sekä taso- että avaruusgeometriassa ja myös esimerkiksi fysiikassa ja tilastotieteessä.  Määrätyn integraalin laskemiseen valitaan tarvitaan ensin funktion <span class="math notranslate nohighlight">\(f(x)\)</span> integraalifunktio <span class="math notranslate nohighlight">\(F(x)\)</span>. Sitten valitaan kaksi muuttujan arvoa: alaraja <span class="math notranslate nohighlight">\(x_1\)</span> ja yläraja <span class="math notranslate nohighlight">\(x_2\)</span>. Alaraja on siis vaaka-akselilla vasemmalla ja yläraja oikealla puolella. Lasketaan integraalifunktion arvot näissä pisteissä, siis <span class="math notranslate nohighlight">\(F(x_1)\)</span> ja <span class="math notranslate nohighlight">\(F(x_2)\)</span>. Lopuksi lasketaan näiden arvojen erotus: <span class="math notranslate nohighlight">\(F(x_2)-F(x_1)\)</span>. Määrätyn integraalin laskemisesta tuloksena on siis luku, ei lauseke.</p>
 <p>Määrättyä integraalia laskettaessa voidaan aina asettaa integroimisvakioksi <span class="math notranslate nohighlight">\(C=0\)</span>. Näin voidaan tehdä, koska erotusta <span class="math notranslate nohighlight">\(F(x_2)-F(x_1)\)</span> laskettaessa vakio kuitenkin sievenee pois.</p>
 <p>Määrättyä integraalia merkitään seuraavasti: funktion <span class="math notranslate nohighlight">\(f(x)\)</span> määrätty integraali pisteestä <span class="math notranslate nohighlight">\(x_1\)</span> pisteeseen <span class="math notranslate nohighlight">\(x_2\)</span> on <span class="math notranslate nohighlight">\(\int_{x_1}^{x_2} f(x) ~\text{d}x\)</span>.</p>
 <p>Lisäksi käytetään seuraavaa merkintää: <span class="math notranslate nohighlight">\(\overset{x_2}{\underset{x_1}{/}} F(x) = F(x_2) - F(x_1)\)</span>.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Huomautus</p>
-<p>Määrätty integraali määritellään ns. Riemann-summan avulla seuraavasti:</p>
+<p>Yksinkertaisimmillaan määrätty integraali tarkoittaa funktion kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin rajautuvaa pinta-alaa. Pinta-ala määritellään tällöin ns. Riemann-summan avulla seuraavasti:</p>
 <p><span class="math notranslate nohighlight">\(\lim_{n \to \infty} \Sigma_{i=1}^n f(x_i) \Delta x\)</span></p>
-<p>Laskukaavan perustelu päivitetään tänne myöhemmin!</p>
+<p>Laskukaava tarkoittaa sitä, että funktion kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin välistä pinta-alaa arvioidaan jakamalla pinta-ala kapeisiin suorakulmioihin. Suorakulmion leveys on aina jokin pieni <span class="math notranslate nohighlight">\(\Delta x\)</span>, ja korkeus <span class="math notranslate nohighlight">\(x\)</span>-akselin tietyssä kohdassa on vastaava funktion arvo <span class="math notranslate nohighlight">\(f(x)\)</span>. Yksittäisen suorakulmion pinta-ala jossakin tietyssä kohdassa <span class="math notranslate nohighlight">\(x_i\)</span> on siis leveyden ja korkeuden tulo eli <span class="math notranslate nohighlight">\(f(x_i) \Delta x\)</span>.</p>
+<p>Merkki <span class="math notranslate nohighlight">\(\Sigma_{i=1}^n\)</span> tarkoittaa, että lasketaan summa kaikista näistä suorakulmioista alkaen kohdasta <span class="math notranslate nohighlight">\(x_i\)</span> ja päättyen arvoon <span class="math notranslate nohighlight">\(x_n\)</span>. Tästä summasta muodostuu koko käyrän rajaama pinta-ala. Jos suorakulmiot ovat leveitä, niin tuloksena on melko karkea arvio pinta-alasta. Tarkka tulos saadaan vasta, kun jokaisen suorakulmaisen leveys lähestyy nollaa ja toisaalta suorakulmioiden määrä lähestyy ääretöntä. Tätä kuvaa laskukaavan kohta <span class="math notranslate nohighlight">\(\lim_{n \to \infty}\)</span>. Voit tutustua käsitteeseen kuvien ja animaatioiden kera <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_sum">Wikipediassa</a>.</p>
+<p>Integraalilaskennassa siis summa <span class="math notranslate nohighlight">\(\Sigma\)</span>, jossa yhteenlaskettavien määrä lähestyy ääretöntä, korvataankin integraalilla <span class="math notranslate nohighlight">\(\int\)</span>. Samalla suikaleen leveys <span class="math notranslate nohighlight">\(\Delta x\)</span> muuttuu ns. differentiaalisen pieneksi leveydeksi <span class="math notranslate nohighlight">\(\text{d}x\)</span>. Monessa muussakin integraalilaskennan sovelluksessa jatkossa sovelletaan tätä periaatetta, että integroinnilla korvataan äärettömän pienistä palasista koostuvan summan laskeminen.</p>
 </div>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
@@ -402,7 +449,9 @@ title="Print to PDF"
 \end{align}\)</span></p>
 </div>
 </div>
-<p>Määrätyn integraalin voi tulkita funktion <span class="math notranslate nohighlight">\(f(x)\)</span> kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin jäävän alueen pinta-alaksi, kun aluetta rajoitetaan pisteiseen <span class="math notranslate nohighlight">\(x_1\)</span> ja <span class="math notranslate nohighlight">\(x_2\)</span> asetetuilla suorilla. Jos funktion arvot ovat negatiivisia eli jos funktion kuvaaja kulkee <span class="math notranslate nohighlight">\(x\)</span>-akselin alapuolella, niin pinta-ala on määrätyn integraalin itseisarvo.</p>
+<section id="pinta-aloja-ja-muita-esimerkkeja">
+<h2>Pinta-aloja ja muita esimerkkejä<a class="headerlink" href="#pinta-aloja-ja-muita-esimerkkeja" title="Permalink to this headline">#</a></h2>
+<p>Määrätyn integraalin, jossa alarajana on <span class="math notranslate nohighlight">\(x_1\)</span> ja ylärajana <span class="math notranslate nohighlight">\(x_2\)</span>, voi tulkita funktion <span class="math notranslate nohighlight">\(f(x)\)</span> kuvaajan ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin jäävän alueen pinta-alaksi, kun aluetta rajoitetaan pisteiseen <span class="math notranslate nohighlight">\(x_1\)</span> ja <span class="math notranslate nohighlight">\(x_2\)</span> asetetuilla suorilla. Jos funktion arvot ovat negatiivisia eli jos funktion kuvaaja kulkee <span class="math notranslate nohighlight">\(x\)</span>-akselin alapuolella, niin pinta-ala on määrätyn integraalin itseisarvo.</p>
 <p>Lisäksi määrätyn integraalin voi tarvittaessa laskea palasina: pisteiden <span class="math notranslate nohighlight">\(x_1\)</span> ja <span class="math notranslate nohighlight">\(x_2\)</span> välistä voidaan valita mikä tahansa piste <span class="math notranslate nohighlight">\(x_3\)</span>, ja tällöin</p>
 <p><span class="math notranslate nohighlight">\(\int_{x_1}^{x_2} f(x)~\text{d}x = \int_{x_1}^{x_3} f(x)~\text{d}x + \int_{x_3}^{x_2} f(x)~\text{d}x\)</span>.</p>
 <p><img alt="Määrätty integraali, esimerkki" src="_images/maaratty_integraali_esim.png" /></p>
@@ -437,6 +486,29 @@ title="Print to PDF"
 </div>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
+<p>Puolisuunnikkaan muotoinen tontti rajautuu <span class="math notranslate nohighlight">\(x\)</span>-akseliin sekä suoriin <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(x=200\)</span> ja <span class="math notranslate nohighlight">\(f(x)=\frac{2}{5}x+40\)</span>, missä kaikki luvut vastaavat pituuksia metreinä. Tontti halkaistaan kahtia <span class="math notranslate nohighlight">\(y\)</span>-akselin suuntaisella suoralla rajalla. Mistä kohti tontti pitää halkaista, jotta se jakaantuu kahteen yhtä suureen osaan?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Hahmotellaan tontista kuva ja merkitään halkaisukohtaa vaikkapa kirjaimella <span class="math notranslate nohighlight">\(a\)</span> sekä pinta-aloja halkaisukohdan eri puolilla <span class="math notranslate nohighlight">\(A_1\)</span> ja <span class="math notranslate nohighlight">\(A_2\)</span>.</p>
+<p><img alt="Kahteen osaan jaettu puolisuunnikas" src="_images/halkaistu_tontti.png" /></p>
+<p>Pinta-alat ovat <span class="math notranslate nohighlight">\(A_1=\int_{0}^a \frac{2}{5}x+40~\text{d}x\)</span> ja <span class="math notranslate nohighlight">\(A_2=\int_{a}^{200} \frac{2}{5}x+40~\text{d}x\)</span>. Muodostetaan kummallekin lauseke:</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+&amp;A_1=\int_{0}^a \frac{2}{5}x+40~\text{d}x\\
+&amp; =\overset{a}{\underset{0}{/}} \frac{1}{5}x^2+40x\\
+&amp; = \frac{1}{5}\cdot a^2+40\cdot a - (\frac{1}{5}\cdot 0^2+40\cdot 0)\\
+&amp; = \frac{a^2}{5}+40a
+\end{align}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+&amp;A_2=\int_{a}^{200} \frac{2}{5}x+40~\text{d}x\\
+&amp; =\overset{200}{\underset{a}{/}} \frac{1}{5}x^2+40x\\
+&amp; = \frac{1}{5}\cdot 200^2+40\cdot 200 - (\frac{1}{5}\cdot a^2+40\cdot a)\\
+&amp; = \frac{200^2}{5}+40\cdot 200-\frac{a^2}{5}-40a
+\end{align}\)</span></p>
+<p>Koska pinta-alojen pitää olla yhtä suuret, niin <span class="math notranslate nohighlight">\(A_1=A_2\)</span> eli <span class="math notranslate nohighlight">\(\frac{a^2}{5}+40a=\frac{200^2}{5}+40\cdot 200-\frac{a^2}{5}-40a\)</span>. Ratkaisemalla yhtälö laskimella saadaan halkaisukohdaksi suunnilleen 123.6 metriä. Tuloksen voi tarkistaa laskemalla määrätyn integraalin nollasta tähän lukuun saakka ja sitten tästä lukuun 200 saakka. Kummankin puolikkaan pinta-alaksi tulee noin 8000 neliömetriä.</p>
+</div>
+</div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
 <p>Fysiikassa sijainti hetkellä <span class="math notranslate nohighlight">\(t\)</span>, siis <span class="math notranslate nohighlight">\(x(t)\)</span>, on nopeuden <span class="math notranslate nohighlight">\(v(t)\)</span> integraalifunktio. Kappale liikkuu hetkellä <span class="math notranslate nohighlight">\(t\)</span> nopeudella <span class="math notranslate nohighlight">\(v(t)=3t\)</span>. Kuinka kauas lähtöpisteestä kappale etenee</p>
 <p>a) välillä 0…1 sekuntia?</p>
 <p>b) välillä 9…10 sekuntia?</p>
@@ -447,8 +519,59 @@ title="Print to PDF"
 <p>a) <span class="math notranslate nohighlight">\(\int_0^1 3t~\text{d}t= x(1)-x(0)=\frac{3}{2}\cdot 1^2 - \frac{3}{2}\cdot 0^2 = \frac{3}{2}\)</span></p>
 <p>b) <span class="math notranslate nohighlight">\(\int_9^{10} 3t~\text{d}t= x(10)-x(9)=\frac{3}{2}\cdot 10^2 - \frac{3}{2}\cdot 9^2 = \frac{3}{2} (10^2-9^2) = \frac{3}{2}\cdot 19 = \frac{57}{2}\)</span></p>
 <p>c) <span class="math notranslate nohighlight">\(\int_0^{10} 3t~\text{d}t= x(10)-x(0)=\frac{3}{2}\cdot 10^2 - \frac{3}{2}\cdot 0^2 = \frac{300}{2}=150\)</span></p>
+<p>Fysiikan taulukkokirjoista löytyy kaavat tasaisessa ja tasaisesti kiihtyvässä liikkeessä kuljetulle matkalle. Vakionopeudella <span class="math notranslate nohighlight">\(v\)</span> liikkuva kappale etenee ajassa <span class="math notranslate nohighlight">\(t\)</span> matkan <span class="math notranslate nohighlight">\(x(t)=vt\)</span>. Kappale, joka liikkuu alkunopeudella <span class="math notranslate nohighlight">\(v_0\)</span> ja vakiona pysyvällä kiihtyvyydellä <span class="math notranslate nohighlight">\(a\)</span>, etenee ajassa <span class="math notranslate nohighlight">\(t\)</span> matkan <span class="math notranslate nohighlight">\(x(t)=v_0 t + \frac{1}{2}at^2\)</span>. Integraalilaskennan menetelmät mahdollistavat matkojen laskemisen, vaikka nopeus ei olisikaan tasainen eikä tasaisesti kiihtyvä.</p>
+<p>Lisähaaste: johda kaavat <span class="math notranslate nohighlight">\(x(t)=vt\)</span> ja <span class="math notranslate nohighlight">\(x(t)=v_0 t + \frac{1}{2}at^2\)</span> integroimalla käyttäen tietoa, että matka on nopeuden integraali, ja nopeus on kiihtyvyyden integraali.</p>
 </div>
 </div>
+<div class="admonition-esimerkki-jossa-ei-lasketa-pinta-alaa admonition">
+<p class="admonition-title">Esimerkki, jossa ei lasketa pinta-alaa</p>
+<p>Kun raketti lähetetään maapallon pinnalta avaruuteen, tehdään periaatteessa nostotyötä. Fysiikan peruskaavojen mukaan nostotyö <span class="math notranslate nohighlight">\(W\)</span> on nostoon tarvittava voima <span class="math notranslate nohighlight">\(mg\)</span> kertaa nostokorkeus <span class="math notranslate nohighlight">\(h\)</span>, eli <span class="math notranslate nohighlight">\(W=mgh\)</span>, missä <span class="math notranslate nohighlight">\(m\)</span> on kappaleen massa ja <span class="math notranslate nohighlight">\(g=9.81~\frac{\text{m}}{\text{s}^2}\)</span>. Laskukaava ei kuitenkaan päde kaukana maapallon pinnalta. Avaruudessa painovoima lasketaan kaavalla <span class="math notranslate nohighlight">\(G(x)=\frac{\gamma M m}{x^2}\)</span>, missä <span class="math notranslate nohighlight">\(\gamma\approx 6.67\cdot 10^{-11}~\frac{\text{Nm}^2}{\text{kg}^2}\)</span> on gravitaatiovakio, <span class="math notranslate nohighlight">\(M\approx 5.97\cdot 10^{24}~\text{kg}\)</span> on maapallon massa, <span class="math notranslate nohighlight">\(m\)</span> on nostettavan kappaleen massa, ja <span class="math notranslate nohighlight">\(x\)</span> on etäisyys maapallon keskipisteestä. Maapallon pinnalla tämä etäisyys on noin 6370 km.</p>
+<p>Laskukaava korkeudelta <span class="math notranslate nohighlight">\(x_1\)</span> korkeudelle <span class="math notranslate nohighlight">\(x_2\)</span> muuttuu nyt integraaliksi <span class="math notranslate nohighlight">\(W=\int_{x_1}^{x_2} \frac{\gamma M m}{x^2}~\text{d}x\)</span>. Paljonko tehdään työtä, kun 2000 kg satelliitti nostetaan maapallon pinnalta 10 000 km korkeuteen?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Fysiikan käytäntöjen mukaan integroimisrajat pitää esittää metreinä. Integroinnin alarajana on maapallon säde <span class="math notranslate nohighlight">\(x_1=\)</span> 6 370 000 m ja ylärajaa <span class="math notranslate nohighlight">\(x_2 = \)</span> 10 000 000 m. Lasku etenee seuraavasti (yksiköt on jätetty selkeyden vuoksi pois, lopputuloksen yksikkö on joule):</p>
+<p><span class="math notranslate nohighlight">\(\begin{align} 
+&amp; W = \int_{x_1}^{x_1} \frac{6.67 \cdot 10^{-11} \cdot 5.97 \cdot 10^{24} \cdot 2000}{x^2}~\text{d}x \\
+&amp; = 6.67 \cdot 10^{-11} \cdot 5.97 \cdot 10^{24} \cdot 2000 \int_{x_1}^{x_2} \frac{1}{x^2}~\text{d}x \\
+&amp; = 6.67 \cdot 10^{-11} \cdot 5.97 \cdot 10^{24} \cdot 2000 \overset{x_1}{\underset{x_1}{/}} -\frac{1}{x} = 4.6\cdot 10^{10}
+\end{align}\)</span></p>
+</div>
+</div>
+</section>
+<section id="epaoleellinen-integraali">
+<h2>Epäoleellinen integraali<a class="headerlink" href="#epaoleellinen-integraali" title="Permalink to this headline">#</a></h2>
+<p>Epäoleellinen integraali on määrätty integraali, jossa alarajana on <span class="math notranslate nohighlight">\(-\infty\)</span> tai ylärajana on <span class="math notranslate nohighlight">\(\infty\)</span> tai nämä molemmat toteutuvat yhtä aikaa. Tällöin määrätty integraali lasketaan siten, että vaihdetaan äärettömän paikalle jokin kirjain esim. <span class="math notranslate nohighlight">\(t\)</span>, ja sitten lasketaan integroinnin tuloksena saadusta lausekkeesta raja-arvo, jossa <span class="math notranslate nohighlight">\(t\)</span> lähestyy tilanteesta riippuen negatiivista tai positiivista ääretöntä.</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>a) Laske funktion <span class="math notranslate nohighlight">\(f(x)=\frac{1}{x^2}\)</span> ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin jäävä pinta-ala <span class="math notranslate nohighlight">\(x\)</span>:n arvosta 1 eteenpäin.</p>
+<p>b) Laske funktion <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> ja <span class="math notranslate nohighlight">\(x\)</span>-akselin väliin jäävä pinta-ala <span class="math notranslate nohighlight">\(x\)</span>:n arvosta 1 eteenpäin.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>a) Integroinnin alarajana on <span class="math notranslate nohighlight">\(1\)</span> ja ylärajana <span class="math notranslate nohighlight">\(\infty\)</span>. Vaihdetaan ylärajan tilalle <span class="math notranslate nohighlight">\(t\)</span> ja muodostetaan integraali:</p>
+<p><span class="math notranslate nohighlight">\(\int_1^t \frac{1}{x^2}~\text{d}x = \overset{t}{\underset{1}{/}} -\frac{1}{x} = -\frac{1}{t}-\left(-\frac{1}{1}\right) = 1-\frac{1}{t}\)</span></p>
+<p>Pinta-ala saadaan, kun lasketaan tästä raja-arvo <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> (raja-arvon laskemisessa käytetään “pizzanjakosääntöä” joka on esitetty toisaalla tässä oppimateriaalissa):</p>
+<p><span class="math notranslate nohighlight">\(\lim_{t \to \infty} 1-\frac{1}{t} = 1 - 0 = 1 \)</span></p>
+<p>b) Lasku alkaa samalla tavalla eli muodostamalla määrätty integraali alarajalta 1 ylärajalle <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\int_1^t x^2~\text{d}x = \overset{t}{\underset{1}{/}} \frac{1}{3} x^3 = \frac{1}{3}t^3-\frac{1}{3}\cdot 1 = \frac{1}{3}t^3-\frac{1}{3}\)</span></p>
+<p>Lasketaan taas raja-arvo: <span class="math notranslate nohighlight">\(\lim_{t \to \infty} \frac{1}{3}t^3-\frac{1}{3} = \infty\)</span></p>
+<p>Pinta-ala ei siis niinsanotusti suppene, vaan kasvaa sitä mukaa kun liikutaan <span class="math notranslate nohighlight">\(x\)</span>-akselilla eteenpäin.</p>
+</div>
+</div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Erään tuotteen myynti päivässä noudattaa funktiota <span class="math notranslate nohighlight">\(f(x) = 70e^{-0.02x}\)</span>. Mikä on kokonaismyynnin raja-arvo, kun <span class="math notranslate nohighlight">\(x \to \infty\)</span>? Milloin myynti kannattaa käytännössä lopettaa?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Kokonaismyynti on raja-arvo määrätystä integraalista hetkestä <span class="math notranslate nohighlight">\(x=0\)</span> päivää hetkeen <span class="math notranslate nohighlight">\(x=\infty\)</span> päivää. Merkitään tässä integroinnin ylärajaa <span class="math notranslate nohighlight">\(t\)</span> ja lasketaan raja-arvo:</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+&amp; \lim_{t \to \infty} \int_0^t 70e^{-0.02x}~\text{d}x \\
+&amp; = \lim_{t \to \infty} \overset{t}{\underset{0}{/}} -3500e^{-0.02x} \\
+&amp; = \lim_{t \to \infty} \left(-3500e^{-0.02t} + 3500 \right)= 3500
+\end{align}\)</span></p>
+<p>Tuotteita menee siis kaupaksi noin 3500 kappaletta. Myynnin voi lopettaa, kun päästään riittävän lähelle tätä lukua. Tarvittavan myyntiajan voi selvittää kokeilemalla asettaa määrätyn integraalin ylärajaksi ääretöntä pienempiä lukuja. Noin 500 päivää riittää.</p>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -501,7 +624,7 @@ title="Print to PDF"
   
     By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2025.<br/>
 </p>
         </footer>
     </div>

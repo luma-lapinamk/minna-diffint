@@ -136,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Asymptootit
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eksponenttifunktio.html">
+   Logaritmit ja eksponenttiyhtälöt
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -210,16 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
    Puolisuunnikassääntö
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Muuta
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="eksponenttifunktio.html">
-   Logaritmit ja eksponenttiyhtälöt
+  <a class="reference internal" href="tilastomatematiikkaa.html">
+   Tilastomatematiikkaa
   </a>
  </li>
 </ul>
@@ -382,6 +380,11 @@ title="Print to PDF"
    Funktion keskiarvo
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#painopisteen-laskeminen">
+   Painopisteen laskeminen
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -414,6 +417,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funktion-keskiarvo">
    Funktion keskiarvo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#painopisteen-laskeminen">
+   Painopisteen laskeminen
   </a>
  </li>
 </ul>
@@ -469,6 +477,7 @@ title="Print to PDF"
 </section>
 <section id="kaaren-pituus">
 <h2>Kaaren pituus<a class="headerlink" href="#kaaren-pituus" title="Permalink to this headline">#</a></h2>
+<p>Kaaren pituuden laskeminen liittyy varsinkin sellaisiin funktioihin, joiden kuvaaja ei ole suora. Esimerkiksi kahden kiinnityspisteen välillä roikkuvan köyden tai ketjun korkeutta maasta kuvaa ns. <a class="reference external" href="https://fi.wikipedia.org/wiki/Ketjuk%C3%A4yr%C3%A4">ketjukäyrä</a>. Jos ketjukäyrän funktion lauseke tiedettäisiin, niin sen perusteella voitaisiin laskea ketjun pituus.</p>
 <p>Funktion <span class="math notranslate nohighlight">\(f(x)\)</span> kuvaajan kaaren pituus <span class="math notranslate nohighlight">\(s\)</span> välillä <span class="math notranslate nohighlight">\(x_1 \leq x \leq x_2\)</span> saadaan kaavalla</p>
 <p><span class="math notranslate nohighlight">\(s=\int_{x_1}^{x_2} \sqrt{1+[f'(x)]^2}~\text{d}x\)</span></p>
 <div class="tip dropdown admonition">
@@ -484,6 +493,9 @@ title="Print to PDF"
 <p>Osamäärä <span class="math notranslate nohighlight">\(\frac{\Delta y_i}{\Delta x_i}\)</span> on sama kuin <span class="math notranslate nohighlight">\(f'(x)\)</span>, jos <span class="math notranslate nohighlight">\(\Delta x\)</span> lähenee nollaa. Näinhän käykin, kun osapituuksen <span class="math notranslate nohighlight">\(s_i\)</span> määrä lähenee ääretöntä. Edelleen integraalin määritelmän perusteella summa, jossa yhteenlaskettavia on äärettömän monta, voidaan esittää integraalina:</p>
 <p><span class="math notranslate nohighlight">\(s=\int \sqrt{1+[f'(x)]^2}~\text{d}x\)</span></p>
 </div>
+<p>Tarkastellaan esimerkkinä kuvan mukaista jokea, joka ylhäältä päin näyttäisi funktion <span class="math notranslate nohighlight">\(f(x)=e^{0.01x} \sin{(0.1x+4)}\)</span> kuvaajalta. Minkä verran mutkittelu lisää joen pituutta kohtien <span class="math notranslate nohighlight">\(x=0\)</span> km ja <span class="math notranslate nohighlight">\(x=150\)</span> km välillä? (Tällaisia mutkittelevia eli ns. meanderoivia jokia on oikeasti olemassa. Niitä muodostuu, kun vedenvirtausnopeus joen eri rannoilla vaihtelee esimerkiksi hiekan kasautumisen takia. Oikeasti mutkittelu tietysti noudattaa monimutkaisempia funktioita.)</p>
+<p><img alt="Mutkitteleva joki" src="_images/joen_mutkat.png" /></p>
+<p>Joen pituuden laskuun tarvitaan derivaatta <span class="math notranslate nohighlight">\(f'(x)\)</span>. Funktio <span class="math notranslate nohighlight">\(f(x)\)</span> on kahden yhdistetyn funktion tulo, joten derivaatan laskeminen ei ole ihan yksinkertaista. Lisäksi derivaatan lauseke pitää korottaa toiseen potenssiin ja integraalissa tarvitaan vielä neliöjuurtakin. Lasku on siis parasta suorittaa symbolisella laskimella. Välivaiheena voi ensin laskea derivaatan lausekkeen, joka tässä tapauksessa on <span class="math notranslate nohighlight">\(f'(x)=e^{0.01 x}) (0.1 \cos{(4 + 0.1 x)} + 0.01 \sin{(4 + 0.1 x))}\)</span>. Sitten tämä lauseke sijoitetaan määrätyn integraalin laskukaavaan. Tämän esimerkin joen pituudeksi tulee noin 152.4 km, eli mutkittelu lisäsi pituutta noin 2.4 km. Joissakin laskimissa on myös mahdollista käyttää valmista komentoa esim. “length of curve” tai “arc length”.</p>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
 <p>Laske funktiota <span class="math notranslate nohighlight">\(f(x)=\frac{2}{3} x\sqrt{x}\)</span> kuvaavan kaaren pituus välillä <span class="math notranslate nohighlight">\(0 \leq x \leq 1\)</span>.</p>
@@ -501,6 +513,20 @@ title="Print to PDF"
 <p><span class="math notranslate nohighlight">\(\int \sqrt{1+x}~\text{d}x = \int (1+x)^{1/2}~\text{d}x = \frac{2}{3}(1+x)^{3/2}\)</span></p>
 <p>Kaaren pituus on siis</p>
 <p><span class="math notranslate nohighlight">\(s=\frac{2}{3} (1+1)^{3/2} - \frac{2}{3}(1+0)^{3/2} \approx 1.219\)</span></p>
+</div>
+</div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Liikutaan käyrällä <span class="math notranslate nohighlight">\(f(x)=3x+2\)</span> aloittaen pisteestä <span class="math notranslate nohighlight">\(x=1\)</span>. Mihin asti pitää edetä, että kuljettu matka on 20 yksikköä?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Merkitään päätepistettä vaikkapa kirjaimella <span class="math notranslate nohighlight">\(a\)</span>. Lasketaan aluksi funktion derivaatta <span class="math notranslate nohighlight">\(f'(x)=3\)</span>. Sijoitetaan se kaaren pituuden laskukaavaan ja sievennetään lauseke:</p>
+<p><span class="math notranslate nohighlight">\(S=\int_1^a \sqrt{1+3^2}~\text{d}x = \int_1^a \sqrt{10}~\text{d}x = \overset{a}{\underset{1}{/}} \sqrt{10}x = \sqrt{10}a-\sqrt{10}\)</span></p>
+<p>Ratkaistaan yhtälö vaaditulle matkan pituudelle:</p>
+<p><span class="math notranslate nohighlight">\(\sqrt{10}a-\sqrt{10}=20\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sqrt{10}a=20+\sqrt{10}\)</span></p>
+<p><span class="math notranslate nohighlight">\(a=\frac{20+\sqrt{10}}{\sqrt{10}}\approx 7.32\)</span></p>
+<p>Tässä tapauksessa funktio on suora, joten tehtävän voisi useiden välivaiheiden kautta ratkaista myös suorakulmaisen kolmion laskukaavoilla.</p>
 </div>
 </div>
 </section>
@@ -536,12 +562,47 @@ title="Print to PDF"
 <p>Laske funktion <span class="math notranslate nohighlight">\(f(x)=3x^2+2x\)</span> keskiarvo välillä <span class="math notranslate nohighlight">\(1\leq x \leq 3\)</span>.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Ratkaisu</p>
-<p>Funktion <span class="math notranslate nohighlight">\(f(x)=3x^2+2x\)</span> integraalifunktio, jossa <span class="math notranslate nohighlight">\(C=0\)</span>, on <span class="math notranslate nohighlight">\(F(x)=x^3+x^2\)</span>.</p>
-<p>Niinpä funktion keskiarvo annetulla välillä on</p>
+<p>Funktion keskiarvo annetulla välillä on</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 \overline{f}(x) &amp; = \frac{1}{3-1} \int_1^3 3x^2+2x~\text{d}x \\
 &amp; = \frac{1}{2} \left((3^3+3^2)-(1^3+1^2)\right) \\
 &amp; = \frac{1}{2} (27+9-1-1) = 17\end{align}\)</span></p>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Neliöllinen ja tehollinen keskiarvo</p>
+<p>Pistorasiasta saadaan Suomessa vaihtovirtaa 50 Hz taajuudella. Sähköjännitteen suuruus <span class="math notranslate nohighlight">\(u\)</span> ajanhetkellä <span class="math notranslate nohighlight">\(t\)</span> noudattaa kuvan mukaista funktiota <span class="math notranslate nohighlight">\(u(t)=u_0 \sin{\omega t}\)</span>, missä <span class="math notranslate nohighlight">\(u_0\)</span> on jännitteen huippuarvo (yleensä 325 V) ja <span class="math notranslate nohighlight">\(\omega\)</span> on kulmataajuus <span class="math notranslate nohighlight">\(2\pi\cdot 50\)</span> (radiaania sekunnissa). Mikä on jännitteen suuruus keskimäärin?</p>
+<p><img alt="Sähköjännite voltteina ajan funktiona" src="_images/jannite.png" /></p>
+<p>Keskiarvo suoraan kuvaajasta pääteltynä tai funktion lausekkeesta laskettuna olisi nolla volttia. Kuitenkin arkikokemuksen mukaisesti pistorasiasta tulee sähköä keskimäärin suuremmalla kuin nollan voltin jännitteellä. Tällaisessa tapauksessa lasketaan <strong>neliöllinen keskiarvo</strong> kaavalla</p>
+<p><span class="math notranslate nohighlight">\(\overline{f}^2 = \frac{1}{b-a}\int_a^b \left(f(x)\right)^2~\text{d}x\)</span></p>
+<p>ja sen jälkeen lasketaan vielä <strong>tehollinen</strong> keskiarvo, joka on neliöjuuri edellisen laskun tuloksesta.</p>
+<p>Sähköjännitteen neliöllinen keskiarvo yhden jakson eli <span class="math notranslate nohighlight">\(\frac{1}{50}=0.02\)</span> sekunnin aikana on siis</p>
+<p><span class="math notranslate nohighlight">\(\overline{u}^2 = \frac{1}{0.02-0}\int_0^{0.02} \left(325\cdot \sin{(2\pi \cdot 50 t)}\right)^2~\text{d}t\)</span></p>
+<p>Lasku kannattaa suorittaa laskimella, jolloin saadaan neliöllisen keskiarvon lukuarvoksi 52812.5. Tehollinen jännite on <span class="math notranslate nohighlight">\(\sqrt{52812.5}\)</span> V eli 230 V.</p>
+</div>
+</section>
+<section id="painopisteen-laskeminen">
+<h2>Painopisteen laskeminen<a class="headerlink" href="#painopisteen-laskeminen" title="Permalink to this headline">#</a></h2>
+<p>Integraalilaskennassa painopiste lasketaan periaatteessa samalla tavalla, mutta kappale jaetaan äärettömän moneen osaan, joiden leveys lähenee nollaa. Tarkastellaan tässä vain tasoaluetta, jonka yläreunan rajaa funktio <span class="math notranslate nohighlight">\(f(x)\)</span> ja alareunan <span class="math notranslate nohighlight">\(x\)</span>-akseli. Reunoilla voivat olla suorat <span class="math notranslate nohighlight">\(x=a\)</span> ja <span class="math notranslate nohighlight">\(x=b\)</span> tai funktion <span class="math notranslate nohighlight">\(f(x)\)</span> nollakohdat. Painopiste on mahdollista laskea myös kahden funktion rajaamalle tasoalueelle, mutta siihen tarvittavia laskukaavoja ei käsitellä tässä materiaalissa.</p>
+<p>Oletetaan, että tarkasteltava kappale on kuvan kaltainen, kauttaaltaan homogeeninen eli esimerkiksi vain yhdenlaisesta materiaalista valmistettu tasapaksu levy. Tällöin painopisteen laskukaavaan voi sijoittaa kappaleen osien massojen sijaan osien pinta-alat, sillä riippumatta siitä, onko materiaali esimerkiksi pahvia, betonia vai lunta, jokaisen osan massa on suoraan verrallinen osan pinta-alaan. Tällöin painopisteen laskukaavan osaa <span class="math notranslate nohighlight">\(x_1 m_1 + x_2 m_2 + \dots\)</span> vastaa integraali <span class="math notranslate nohighlight">\(\int_a^b x\cdot f(x)~\text{d}x\)</span>. Kaavassa <span class="math notranslate nohighlight">\(f(x)~\text{d}x\)</span> vastaa äärettömän kapean suikaleen pinta-alaa (kuten määrätyn integraalin laskussakin) ja <span class="math notranslate nohighlight">\(x\)</span> kyseisen osan sijaintia.</p>
+<p><img alt="Homogeeninen tasoalue" src="_images/tunturi.png" /></p>
+<p>Painopisteen laskukaavan kohtaa <span class="math notranslate nohighlight">\(m_1 + m_2 + \dots\)</span> vastaa koko funktion kuvaajan rajaama pinta-ala, sillä koko kappaleen massa on suoraan verrannollinen kappaleen pinta-alaan. Massojen summan paikalle painopisteen laskukaavaan tulee siis määrätyn integraalin avulla laskettava pinta-ala<span class="math notranslate nohighlight">\(A=\int_a^b f(x)~\text{d}x\)</span>. Laskukaavaksi muodostuu siis:</p>
+<p><span class="math notranslate nohighlight">\(x_p=\frac{1}{A}\int_a^b x\cdot f(x)~\text{d}x\)</span></p>
+<p>Painopisteelle voidaan määrittää myös <span class="math notranslate nohighlight">\(y\)</span>-koordinaatti <span class="math notranslate nohighlight">\(y_p\)</span>. Tällöin ajatellaan, että pystysuunnassa jokaisen osan painopiste on puolivälissä kyseistä osaa, siis <span class="math notranslate nohighlight">\(x\)</span>-akselista mitattuna korkeudella <span class="math notranslate nohighlight">\(\frac{1}{2} f(x)\)</span>. Tämä vain sijoitetaan edelliseen laskukaavan osan sijainnin <span class="math notranslate nohighlight">\(x\)</span> paikalle. Saadaan laskukaava:</p>
+<p><span class="math notranslate nohighlight">\(y_p=\frac{1}{A}\int_a^b \frac{1}{2}f(x) \cdot f(x)~\text{d}x\)</span> eli <span class="math notranslate nohighlight">\(y_p=\frac{1}{A}\int_a^b \frac{1}{2} \left[f(x)\right]^2~\text{d}x\)</span></p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Käyrä <span class="math notranslate nohighlight">\(f(x)=2x^2\)</span>, <span class="math notranslate nohighlight">\(x\)</span>-akseli ja suorat <span class="math notranslate nohighlight">\(x=3\)</span> ja <span class="math notranslate nohighlight">\(x=5\)</span> rajaavat tasoalueen. Laske tasoalueen painopisteen koordinaatit.</p>
+<p><img alt="Tasoalueen painopiste, esimerkki" src="_images/painopiste_esim.png" /></p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Lasketaan ensin pinta-ala <span class="math notranslate nohighlight">\(A\)</span>, koska sitä tarvitaan kummankin koordinaatin laskemiseen.</p>
+<p><span class="math notranslate nohighlight">\(A=\int_3^5 2x^2 ~\text{d}x = \overset{5}{\underset{3}{/}} \frac{2}{3}x^3 = \frac{2}{3}\cdot 5^3 - \frac{2}{3}\cdot 3^3 = \frac{196}{3}\approx 65.33\)</span></p>
+<p>Koordinaatin <span class="math notranslate nohighlight">\(x_p\)</span> laskemiseen tarvitaan välivaihe:</p>
+<p><span class="math notranslate nohighlight">\(\int_3^5 x\cdot 2x^2 ~\text{d}x = \overset{5}{\underset{3}{/}} \frac{1}{2}x^4 = \frac{1}{2}\cdot 5^4 - \frac{1}{2}\cdot 3^4 = 272\)</span></p>
+<p>Koordinaatin <span class="math notranslate nohighlight">\(y_p\)</span> laskemiseen tarvitaan välivaihe:</p>
+<p><span class="math notranslate nohighlight">\(\int_3^5 \frac{1}{2}\cdot (2x^2)^2 ~\text{d}x = \overset{5}{\underset{3}{/}} \frac{2}{5}x^5 = \frac{2}{5}\cdot 5^5 - \frac{2}{5}\cdot 3^5 = 1152.8\)</span></p>
+<p>Painopisteen koordinaatit ovat siis <span class="math notranslate nohighlight">\(x_p=\frac{272}{65.33}\approx 4.16\)</span> ja <span class="math notranslate nohighlight">\(y_p=\frac{1152.8}{65.33}\approx 17.64\)</span>.</p>
 </div>
 </div>
 </section>
@@ -597,7 +658,7 @@ title="Print to PDF"
   
     By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2025.<br/>
 </p>
         </footer>
     </div>

@@ -136,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Asymptootit
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eksponenttifunktio.html">
+   Logaritmit ja eksponenttiyhtälöt
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -210,16 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
    Puolisuunnikassääntö
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Muuta
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="eksponenttifunktio.html">
-   Logaritmit ja eksponenttiyhtälöt
+  <a class="reference internal" href="tilastomatematiikkaa.html">
+   Tilastomatematiikkaa
   </a>
  </li>
 </ul>
@@ -373,8 +371,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#yhdistetyn-funktion-integrointi">
-   Yhdistetyn funktion integrointi
+  <a class="reference internal nav-link" href="#muiden-funktioiden-integrointi">
+   Muiden funktioiden integrointi
   </a>
  </li>
 </ul>
@@ -402,8 +400,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#yhdistetyn-funktion-integrointi">
-   Yhdistetyn funktion integrointi
+  <a class="reference internal nav-link" href="#muiden-funktioiden-integrointi">
+   Muiden funktioiden integrointi
   </a>
  </li>
 </ul>
@@ -420,21 +418,39 @@ title="Print to PDF"
 <h1>Integraalilaskenta<a class="headerlink" href="#integraalilaskenta" title="Permalink to this headline">#</a></h1>
 <p>Funktio <span class="math notranslate nohighlight">\(F(x)\)</span> on funktion <span class="math notranslate nohighlight">\(f(x)\)</span> <em>integraalifunktio</em>, jos <span class="math notranslate nohighlight">\(F'(x)=f(x)\)</span>. Esimerkiksi funktio <span class="math notranslate nohighlight">\(F(x)=\frac{1}{3}x^3\)</span> on funktion <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> integraalifunktio, sillä derivointikaavoilla saadaan: <span class="math notranslate nohighlight">\(F'(x)=3\cdot \frac{1}{3}x^2 = x^2\)</span>.</p>
 <p>Yleisesti funktiolla <span class="math notranslate nohighlight">\(f(x)\)</span> on äärettömän monta integraalifunktiota <span class="math notranslate nohighlight">\(F(x)+C\)</span>, missä <span class="math notranslate nohighlight">\(C\)</span> on jokin reaaliluku. Lukua <span class="math notranslate nohighlight">\(C\)</span> kutsutaan integroimisvakioksi. Kaikki funktiot <span class="math notranslate nohighlight">\(F(x)+C\)</span> ovat funktion <span class="math notranslate nohighlight">\(f(x)\)</span> integraalifunktioita riippumatta luvun <span class="math notranslate nohighlight">\(C\)</span> arvosta, sillä vakio <span class="math notranslate nohighlight">\(C\)</span> ei vaikuta funktion derivaattaan. Näin ollen myös esimerkiksi funktio <span class="math notranslate nohighlight">\(F(x)=\frac{1}{3}x^3+5\)</span> on funktion <span class="math notranslate nohighlight">\(f(x)\)</span> eräs integraalifunktio.</p>
-<p>Funktioiden <span class="math notranslate nohighlight">\(f(x)\)</span> ja <span class="math notranslate nohighlight">\(F(x)+C\)</span> yhteyttä merkitään seuraavasti:</p>
-<p><span class="math notranslate nohighlight">\(\int f(x)~\text{d}x = F(x)+C\)</span></p>
+<p>Funktion <span class="math notranslate nohighlight">\(F(x)\)</span> laskemista funktiolle <span class="math notranslate nohighlight">\(f(x)\)</span> merkitään seuraavasti: <span class="math notranslate nohighlight">\(F(x)=\int f(x)~\text{d}x + C\)</span></p>
 <p>Merkintä <span class="math notranslate nohighlight">\(\text{d}x\)</span> tarkoittaa, että funktiota <span class="math notranslate nohighlight">\(f(x)\)</span> käsitellään nimenomaan muuttujan <span class="math notranslate nohighlight">\(x\)</span> suhteen.</p>
 <p>Integraalilaskennassa on siis tarkoituksena löytää funktio <span class="math notranslate nohighlight">\(F(x)+C\)</span>, kun tiedossa on funktio <span class="math notranslate nohighlight">\(f(x)\)</span>. Vakion <span class="math notranslate nohighlight">\(C\)</span> arvon saa selville, jos funktiosta <span class="math notranslate nohighlight">\(F(x)+C\)</span> tiedetään jokin tiettyä muuttujan arvoa vastaava arvo.</p>
 <p>Seuraavaksi esitellään kaavat, joilla onnistuu yksinkertaisten funktioiden integrointi, eli funktion <span class="math notranslate nohighlight">\(F(x)+C\)</span> määrittäminen funktion <span class="math notranslate nohighlight">\(f(x)\)</span> perusteella. Aluksi esitellään perusfunktioiden integrointikaavat. Kun integroitava funktio on yhdistelmä useammasta perusfunktiosta, integrointiin on omat laskukaavansa. Ne perustuvat vastaaviin derivaattalaskujen kaavoihin ja voidaan perustella derivoimalla. Aina useasta perusfunktiosta muodostuvan funktion integrointi ei  ole helppoa tai edes mahdollista.</p>
 <section id="perusfunktioiden-integrointi">
 <h2>Perusfunktioiden integrointi<a class="headerlink" href="#perusfunktioiden-integrointi" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Vakiofunktio: <span class="math notranslate nohighlight">\(\int a~\text{d}x = ax+C\)</span></p></li>
-<li><p>Potenssifunktio <span class="math notranslate nohighlight">\((n \neq -1)\)</span>: <span class="math notranslate nohighlight">\(\int x^n~\text{d}x = \frac{1}{n+1}x^{n+1} + C\)</span></p></li>
-<li><p>Potenssifunktion erikoistapaus: <span class="math notranslate nohighlight">\(\int \frac{1}{x}~\text{d}x=\text{ln}~x+C\)</span></p></li>
-<li><p>Eksponenttifunktio: <span class="math notranslate nohighlight">\(\int e^x~\text{d}x=e^x+C\)</span></p></li>
-<li><p>Sinifunktio: <span class="math notranslate nohighlight">\(\int\text{sin}~x~\text{d}x=-\text{cos}~x+C\)</span></p></li>
-<li><p>Kosinifunktio: <span class="math notranslate nohighlight">\(\int\text{cos}~x~\text{d}x=\text{sin}~x+C\)</span></p></li>
-</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Funktio</p></th>
+<th class="head"><p>Laskukaava</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Vakiofunktio</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int a~\text{d}x = ax+C\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Potenssifunktio <span class="math notranslate nohighlight">\((n \neq -1)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\int x^n~\text{d}x = \frac{1}{n+1}x^{n+1} + C\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Potenssifunktion erikoistapaus</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int \frac{1}{x}~\text{d}x=\text{ln}~x+C\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Eksponenttifunktio</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int e^x~\text{d}x=e^x+C\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Sinifunktio</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int\text{sin}~x~\text{d}x=-\text{cos}~x+C\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Kosinifunktio</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int\text{cos}~x~\text{d}x=\text{sin}~x+C\)</span></p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
 <p>Suorita seuraavat laskut:</p>
@@ -450,15 +466,33 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="yhdistetyn-funktion-integrointi">
-<h2>Yhdistetyn funktion integrointi<a class="headerlink" href="#yhdistetyn-funktion-integrointi" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Summan integraali: <span class="math notranslate nohighlight">\(\int f(x) + g(x) ~\text{d}x = \int f(x) ~\text{d}x+\int g(x) ~\text{d}x\)</span></p></li>
-<li><p>Vakiolla kerrotun funktion integraali: <span class="math notranslate nohighlight">\(\int af(x)~\text{d}x=a\int f(x)~\text{d}x\)</span></p></li>
-<li><p>Jos <span class="math notranslate nohighlight">\(\int f(x)~\text{d}x = F(x)+C\), niin \(\int f(ax)~\text{d}x = \frac{1}{a} F(ax) + C\)</span></p></li>
-<li><p>Jos <span class="math notranslate nohighlight">\(\int f(x)~\text{d}x = F(x)+C\), niin \(\int f(ax+b)~\text{d}x = \frac{1}{a} F(ax+b) + C\)</span></p></li>
-<li><p>Jos <span class="math notranslate nohighlight">\(\int f(x)~\text{d}x = F(x)+C\), niin \(\int f(s(x))\cdot s'(x)~\text{d}x=F(s(x))+C\)</span></p></li>
-</ul>
+<section id="muiden-funktioiden-integrointi">
+<h2>Muiden funktioiden integrointi<a class="headerlink" href="#muiden-funktioiden-integrointi" title="Permalink to this headline">#</a></h2>
+<p>Näillä säännöillä voidaan integroida kahden perusfunktion summa tai vakiolla kerrottu perusfunktio, sekä lisäksi yhdistettyjen funktioiden erikoistapauksia erikoistapaukset joissa a) yhdisten funktion muuttuja on kerrottu vakiolla, b) yhdistetyn funktion sisäfunktio on suoran yhtälö, tai c) yhdistetty funktio on kerrottu sisäfunktionsa derivaatalla. Jälkimmäisissä tapauksissa oletetaan, että <span class="math notranslate nohighlight">\(\int f(x)~\text{d}x = F(x)+C\)</span>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tapaus</p></th>
+<th class="head"><p>Laskukaava</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Summa</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int f(x) + g(x) ~\text{d}x = \int f(x) ~\text{d}x+\int g(x) ~\text{d}x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Vakiolla kerrottu funktio</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int af(x)~\text{d}x=a\int f(x)~\text{d}x\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Sisäfunktio <span class="math notranslate nohighlight">\(ax\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\int f(ax)~\text{d}x = \frac{1}{a} F(ax) + C\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sisäfunktio <span class="math notranslate nohighlight">\(ax+b\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\int f(ax+b)~\text{d}x = \frac{1}{a} F(ax+b) + C\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Kertoimena sisäfunktion derivaatta</p></td>
+<td><p><span class="math notranslate nohighlight">\(\int f(s(x))\cdot s'(x)~\text{d}x=F(s(x))+C\)</span></p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
 <p>Suorita seuraavat laskut:</p>
@@ -564,7 +598,7 @@ title="Print to PDF"
   
     By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2025.<br/>
 </p>
         </footer>
     </div>

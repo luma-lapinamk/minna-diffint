@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Derivointisääntöjä" href="derivointisaannot.html" />
-    <link rel="prev" title="Asymptootit" href="asymptootit.html" />
+    <link rel="prev" title="Logaritmit ja eksponenttiyhtälöt" href="eksponenttifunktio.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -136,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Asymptootit
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eksponenttifunktio.html">
+   Logaritmit ja eksponenttiyhtälöt
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -210,16 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
    Puolisuunnikassääntö
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Muuta
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="eksponenttifunktio.html">
-   Logaritmit ja eksponenttiyhtälöt
+  <a class="reference internal" href="tilastomatematiikkaa.html">
+   Tilastomatematiikkaa
   </a>
  </li>
 </ul>
@@ -414,10 +412,40 @@ title="Print to PDF"
 <p>Tarkastellaan jatkuvaa funktiota <span class="math notranslate nohighlight">\(f(x)\)</span>. Sen arvo muuttujan arvolla <span class="math notranslate nohighlight">\(x\)</span> on luonnollisesti <span class="math notranslate nohighlight">\(f(x)\)</span>. Kun muuttujan arvoa kasvatetaan (tai pienennetään) hyvin pienen muutoksen <span class="math notranslate nohighlight">\(\Delta x\)</span> verran arvoon <span class="math notranslate nohighlight">\(x+\Delta x\)</span>, niin funktio saa jonkin arvon <span class="math notranslate nohighlight">\(f(x+\Delta x)\)</span>.</p>
 <p>Funktion arvon ja muuttujan arvon muutoksen suhde voidaan kirjoittaa:</p>
 <p><span class="math notranslate nohighlight">\(\frac{f(x+\Delta x)-f(x)}{(x+\Delta x)-x} = \frac{f(x+\Delta x)-f(x)}{x+\Delta x -x} = \frac{f(x+\Delta x)-f(x)}{\Delta x}\)</span></p>
-<p>Edellistä lauseketta sanotaan funktion erotusosamääräksi. Funktion muutosnopeus missä tahansa funktion määrittelyjoukkoon kuuluvassa pisteessä <span class="math notranslate nohighlight">\(x\)</span> saadaan nyt erotusosamäärän raja-arvona, kun muuttujien etäisyys <span class="math notranslate nohighlight">\(\Delta x\)</span> kutistetaan nollaan. Tätä erotusosamäärän raja-arvoa nimitetään funktion derivaataksi.</p>
-<p>Derivaattaa merkitään tavallisimman heittomerkillä: funktion <span class="math notranslate nohighlight">\(f(x)\)</span> derivaatta on <span class="math notranslate nohighlight">\(f'(x)\)</span>. Muita yleisiä merkintätapoja ovat <span class="math notranslate nohighlight">\(D f(x)\)</span> ja <span class="math notranslate nohighlight">\(\frac{\text{d}f}{\text{d}x}\)</span>.</p>
-<p>Käyttämällä derivaatalle merkintää <span class="math notranslate nohighlight">\(f'(x)\)</span> voidaan kirjoittaa minkä tahansa jatkuvan funktion derivaatalle laskukaava seuraavasti:</p>
+<p>Edellistä lauseketta sanotaan funktion erotusosamääräksi.</p>
+<p>Lasketaan esimerkin vuoksi muutama erotusosamäärä funktiolle <span class="math notranslate nohighlight">\(f(x)=x^2+3\)</span> siten, että tarkoituksen on selvittää funktion muutosnopeus kohdassa <span class="math notranslate nohighlight">\(x=1\)</span>. Funktion arvo kyseisessä pisteessä on <span class="math notranslate nohighlight">\(f(1)=1^2+3=4\)</span>. Lasketaan erotusosamäärä eli kulmakerroin sellaiselle suoralle, jonka toinen piste on <span class="math notranslate nohighlight">\((1,4)\)</span> ja toiselle pisteelle on kolme eri vaihtoehtoa:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Piste <span class="math notranslate nohighlight">\((x,f(x)\)</span></p></th>
+<th class="head"><p>Erotusosamäärä</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(<span class="math notranslate nohighlight">\(2, f(2))=(2,7)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{f(x+\Delta x)-f(x)}{\Delta x}=\frac{7-4}{2-1}=3\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(<span class="math notranslate nohighlight">\(1.5, f(1.5))=(1.5,5.25)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{f(x+\Delta x)-f(x)}{\Delta x}=\frac{5.25-4}{1.5-1}=2.5\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>(<span class="math notranslate nohighlight">\(1.1, f(1.1))=(1.1,4.21)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{f(x+\Delta x)-f(x)}{\Delta x}=\frac{4.21-4}{1.1-1}=2.1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Kuvassa on esitetty pisteen <span class="math notranslate nohighlight">\((1,4)\)</span> ja näiden eri pisteiden kautta piirretyt suorat eri väreillä ja erilaisilla viivoilla. Huomataan, että erotusosamäärän arvo eli suoran kulmakerroin muuttuu, kun pisteet lähenevät toisiaan. Tavoite eli pistettä <em>sivuava</em> suora tarkoittaisi sellaista suoraa, jonka toinen piste olisi mitättömän pienen (differentiaalisen) etäisyyden päässä pisteestä <span class="math notranslate nohighlight">\((1,4)\)</span>.</p>
+<p><img alt="Erotusosamääriä erilaisilla pisteiden etäisyyksillä" src="_images/erotusosamaara_kuva.png" /></p>
+<p>Funktion muutosnopeus missä tahansa funktion määrittelyjoukkoon kuuluvassa pisteessä <span class="math notranslate nohighlight">\(x\)</span> saadaan yleisestikin erotusosamäärän raja-arvona, kun muuttujien etäisyys <span class="math notranslate nohighlight">\(\Delta x\)</span> kutistetaan nollaan. Tätä erotusosamäärän raja-arvoa nimitetään funktion derivaataksi ja sen laskemista funktion derivoinniksi. Derivaattaa merkitään tavallisimman heittomerkillä: funktion <span class="math notranslate nohighlight">\(f(x)\)</span> derivaatta on <span class="math notranslate nohighlight">\(f'(x)\)</span>. Muita yleisiä merkintätapoja ovat <span class="math notranslate nohighlight">\(D f(x)\)</span> ja <span class="math notranslate nohighlight">\(\frac{\text{d}f}{\text{d}x}\)</span>. Käyttämällä derivaatalle merkintää <span class="math notranslate nohighlight">\(f'(x)\)</span> voidaan kirjoittaa funktion $f(x) derivaatalle laskukaava seuraavasti:</p>
 <p><span class="math notranslate nohighlight">\(f'(x) = \lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}\)</span></p>
+<p>Edellisen esimerkin funktiolle erotusosamäärän raja-arvo on</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+&amp; f'(x) = \lim_{\Delta x \to 0} \frac{(x+\Delta x)^2+3-(x^2+3)}{\Delta x} = \lim_{\Delta x \to 0} \frac{(x+\Delta x)(x+\Delta x)+3-x^2-3} {\Delta x} \\
+&amp; = \lim_{\Delta x \to 0} \frac{x^2+2 x \Delta x + (\Delta x)^2-x^2}{\Delta x} = \lim_{\Delta x \to 0} \frac{2 x \Delta x + (\Delta x)^2}{\Delta x} \\
+&amp; = \lim_{\Delta x \to 0} \frac{\Delta x (2 x + \Delta x)}{\Delta x} = \lim_{\Delta x \to 0} 2 x + \Delta x = 2x
+\end{align}\)</span></p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Huomautus</p>
+<p>Ihan kaikille funktiolle <span class="math notranslate nohighlight">\(f(x)\)</span> ei ole mahdollista laskea derivaattaa. Funktion pitää olla <em>jatkuva</em> ja <em>derivoituva</em> eli siinä ei saa katkoskohtia eikä “kulmia”. Tässä materiaalissa ei tarkastella tämän tarkemmin, mitä funktioita voi derivoida ja mitä ei, vaan keskitytään sellaisiin funktioihin, joille voi laskea derivaatan funktioiden määrittelyjoukkoon kuuluvilla luvuilla.</p>
+</div>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
 <p>Määritä funktion <span class="math notranslate nohighlight">\(f(x)=x^2+3x\)</span> derivaattafunktio <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
@@ -464,11 +492,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="asymptootit.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="eksponenttifunktio.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Asymptootit</p>
+            <p class="prev-next-title">Logaritmit ja eksponenttiyhtälöt</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="derivointisaannot.html" title="next page">
@@ -487,7 +515,7 @@ title="Print to PDF"
   
     By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2025.<br/>
 </p>
         </footer>
     </div>

@@ -136,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Asymptootit
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eksponenttifunktio.html">
+   Logaritmit ja eksponenttiyhtälöt
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -210,16 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
    Puolisuunnikassääntö
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Muuta
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="eksponenttifunktio.html">
-   Logaritmit ja eksponenttiyhtälöt
+  <a class="reference internal" href="tilastomatematiikkaa.html">
+   Tilastomatematiikkaa
   </a>
  </li>
 </ul>
@@ -486,6 +484,7 @@ title="Print to PDF"
 <p>Eräs hyvin määritelty laskukaava on mikä tahansa reaaliluku <span class="math notranslate nohighlight">\(a\)</span> jaettuna äärettömällä:</p>
 <p><span class="math notranslate nohighlight">\(\frac{a}{\infty}=0\)</span></p>
 <p>Raja-arvon avulla ilmaistuna sama asia on <span class="math notranslate nohighlight">\(\lim_{x \to \infty}\frac{a}{x^n} = 0\)</span>. Luvun <span class="math notranslate nohighlight">\(x\)</span> mikä tahansa potenssi <span class="math notranslate nohighlight">\(x^n\)</span>, missä <span class="math notranslate nohighlight">\(n\)</span> on jokin positiivinen kokonaisluku, ei voi milloinkaan saavuttaa arvoa <span class="math notranslate nohighlight">\(\infty\)</span>, mutta se voi kuitenkin lähestyä sitä.</p>
+<p>Jos laskukaavaa on vaikeaa sisäistää tai muistaa, niin kuvittele luvun <span class="math notranslate nohighlight">\(a\)</span> paikalle vaikkapa pizza. Mitä enemmän on syöjiä eli mitä isommalla luvulla <span class="math notranslate nohighlight">\(a\)</span> jaetaan, niin sitä vähemmän jokaiselle riittää - ja mitä lähemmäs ääretöntä syöjien määrä kasvaa, niin sitä lähemmäs nollaa palan koko pienenee.</p>
 <p>Tämän laskukaavan avulla päästään käsittelemään lausekkeita, joissa luvun <span class="math notranslate nohighlight">\(x\)</span> paikalle pitäisi sijoittaa positiivinen tai negatiivinen ääretön. Lausekkeet pitää siis muokata sellaiseen muotoon, jossa luku <span class="math notranslate nohighlight">\(x\)</span> tai jokin sen potenssi esiintyy murtoluvun nimittäjässä. Käytännössä tämä muokkaus onnistuu rationaalilausekkeilla siten, että lauseke supistetaan lausekkeen nimittäjässä esiintyvällä korkeimmalla <span class="math notranslate nohighlight">\(x\)</span>:n potenssilla.</p>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
@@ -504,6 +503,16 @@ title="Print to PDF"
 <section id="vasemman-ja-oikeanpuoleiset-raja-arvot">
 <h2>Vasemman- ja oikeanpuoleiset raja-arvot<a class="headerlink" href="#vasemman-ja-oikeanpuoleiset-raja-arvot" title="Permalink to this headline">#</a></h2>
 <p>Joidenkin funktioiden arvot lähestyvät eri lukua silloin, kun muuttujan arvoa <span class="math notranslate nohighlight">\(x_0\)</span> lähestytään vasemmalta ja oikealta puolelta. Raja-arvoa siten, että luku <span class="math notranslate nohighlight">\(x_0\)</span> lähestytään vasemmalta, merkitään <span class="math notranslate nohighlight">\(\lim_{x \to x_0 -} f(x)\)</span>. Vastaavasti raja-arvoa, kun lukua <span class="math notranslate nohighlight">\(x_0\)</span> lähestytään oikealta, merkitään <span class="math notranslate nohighlight">\(\lim_{x \to x_0 +} f(x)\)</span>. Näitä kutsutaan vasemman- ja oikeanpuoleiseksi raja-arvoksi. Jos nämä kaksi raja-arvoa ovat samat, niin kyseinen luku, jota funktion arvot lähestyvät, on funktion raja-arvo muuttujan arvolla <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p>Tarkastellaan erityisesti funktioita, jotka ovat muotoa <span class="math notranslate nohighlight">\(\frac{a}{x^n}\)</span>. Jos <span class="math notranslate nohighlight">\(x\)</span> lähestyy ääretöntä, niin lausekkeen arvo lähestyy “pizzasäännön” mukaisesti nollaa. Tämä tapahtuu myös silloin jos <span class="math notranslate nohighlight">\(x\)</span> lähestyy negatiivista ääretöntä. Asia ei riipu myöskään siitä, onko luku <span class="math notranslate nohighlight">\(a\)</span> positiivinen vai negatiivinen.</p>
+<p>Tilanne on kuitenkin toinen silloin, kun <span class="math notranslate nohighlight">\(x\)</span> lähestyy <em>nollaa</em>. Laajennetaan pizzasääntöä toteamalla, että mitä vähemmän syöjiä on, sitä enemmän kukin saa pizzaa. Seuraavaksi kuvitellaan, että syöjiä voisi olla vähemmänkin kuin 1 henkilö. Kun syöjien määrä lähestyy nollaa, niin pizzan määrä lähestyy ääretöntä.</p>
+<p>Nyt on kuitenkin huomioitava, että nollaa voidaan lähestyä joko vasemmalta tai oikealta. Luku <span class="math notranslate nohighlight">\(a\)</span> jaetaan siis joko hyvin lähellä nollaa olevalla negatiivisella tai positiivisella luvulla. Tarvitaan jakolaskun merkkisääntöjä: jos jakaja ja jaettava ovat samanmerkkiset, niin jakolaskun tulos on positiivinen. Jos taas osoittaja ja nimittäjä ovat eri merkkiset, niin jakolaskun tulos on negatiivinen.</p>
+<p>Siis esimerkiksi:</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x \to 0 -} \frac{3}{x}=-\infty\)</span> mutta <span class="math notranslate nohighlight">\(\lim_{x \to 0 +} \frac{3}{x}=\infty\)</span></p>
+<p>Koska raja-arvot ovat erisuuret, niin funktiolla <span class="math notranslate nohighlight">\(f(x)=\frac{3}{x}\)</span> ei ole raja-arvoa kohdassa <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p>Kuitenkin funktiolla <span class="math notranslate nohighlight">\(g(x)=\frac{3}{x^2}\)</span> on raja-arvo, koska <span class="math notranslate nohighlight">\(x^2\)</span> on positiivinen riippumatta siitä, onko <span class="math notranslate nohighlight">\(x\)</span> positiivinen vai negatiivinen:</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x \to 0 -} \frac{3}{x}=\infty\)</span> ja <span class="math notranslate nohighlight">\(\lim_{x \to 0 +} \frac{3}{x}=\infty\)</span></p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Tarkastelu taulukoimalla</p>
 <p>Vasemman- ja oikeanpuolisia raja-arvoja voi tarkastella taulukoimalla muuttujan arvoja läheltä lukua <span class="math notranslate nohighlight">\(x_0\)</span> ja laskemalla niitä vastaavat funktion arvot. Tarkastellaan esimerkiksi, onko funktiolla <span class="math notranslate nohighlight">\(f(x)=\frac{(x-1)^2}{2x-4}\)</span> raja-arvoa pisteessä <span class="math notranslate nohighlight">\(x_0=2\)</span>. Valitaan taulukkoon muuttujan arvoja luvun 2 molemmilta puolilta ja lasketaan vastaavat funktion arvot:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -538,8 +547,30 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<p>Lähestyessä lukua 2 vasemmalta puolelta funktion arvot muuttuvat aina vain pienemmiksi, ja lähestyttäessä oikealta aina vain suuremmiksi. Näin ollen funktiolla ei ole raja-arvoa kohdassa <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
-<p>Jotkut funktiot ovat paloittain määriteltyjä, eli niiden lauseke on erilainen eri <span class="math notranslate nohighlight">\(x\)</span>:n arvoilla. Jos tällöin funktion raja-arvo on sama, kun lähestytään funktion lausekkeen muutoskohtaa eri suunnista, niin kyseinen funktio on muutoskohdassaan jatkuva.</p>
+<p>Lähestyttäessä lukua 2 vasemmalta puolelta funktion arvot muuttuvat aina vain pienemmiksi, ja lähestyttäessä oikealta aina vain suuremmiksi. Näin ollen funktiolla ei ole raja-arvoa kohdassa <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
+</div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Pallopeilin kuvausyhtälö on <span class="math notranslate nohighlight">\(\frac{1}{f}=\frac{1}{a}+\frac{1}{b}\)</span>, missä <span class="math notranslate nohighlight">\(f\)</span> on peilin polttoväli, <span class="math notranslate nohighlight">\(a\)</span> on esineen etäisyys peilistä, ja <span class="math notranslate nohighlight">\(b\)</span> on esineestä muodostuvan kuvan etäisyys peilistä. Luvut <span class="math notranslate nohighlight">\(a\)</span> ja <span class="math notranslate nohighlight">\(f\)</span> ovat positiivisia, mikä vastaa sitä, että sekä esine että polttopiste ovat peilin etupuolella. Luku <span class="math notranslate nohighlight">\(b\)</span> on positiivinen, jos esine on peilistä kauempana kuin polttopiste (eli <span class="math notranslate nohighlight">\(a &gt; f\)</span>), mutta se voi olla myös negatiivinen, jolloin peilin taakse muodostuu niin sanottu valekuva. Voit tutustua pallopeilin toimintaan <a class="reference external" href="https://phet.colorado.edu/sims/html/geometric-optics/latest/geometric-optics_all.html">simulaation</a> (valitse “Mirror”) avulla.</p>
+<p>Mihin kuva muodostuu, jos esine laitetaan a) polttopisteeseen eli <span class="math notranslate nohighlight">\(a=f\)</span>, b) äärettömän kauas peilistä, eli <span class="math notranslate nohighlight">\(a=\infty\)</span>?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Ratkaistaan ensin kuvan paikka <span class="math notranslate nohighlight">\(b\)</span> yhtälöstä <span class="math notranslate nohighlight">\(\frac{1}{f}=\frac{1}{a}+\frac{1}{b}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\frac{1}{b}=\frac{1}{f}-\frac{1}{a}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{1}{b}=\frac{a}{af}-\frac{f}{af}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{1}{b}=\frac{a-f}{af}\)</span></p>
+<p><span class="math notranslate nohighlight">\(b(a-f)=af\)</span></p>
+<p><span class="math notranslate nohighlight">\(b=\frac{af}{a-f}\)</span></p>
+<p>a) Lasketaan raja-arvo <span class="math notranslate nohighlight">\(\lim_{a \to f} \frac{af}{a-f}\)</span>. Huomataan, että ku <span class="math notranslate nohighlight">\(a \to f\)</span>, niin jakaja <span class="math notranslate nohighlight">\(a-f\)</span> lähestyy nollaa joko negatiiviselta tai positiiviselta puolelta riippuen siitä, onko <span class="math notranslate nohighlight">\(a\)</span> pienempi vai suurempi kuin <span class="math notranslate nohighlight">\(f\)</span>. Täytyy siis laskea sekä vasemman- että oikeanpuoleinen raja-arvo.</p>
+<p>Vasemmanpuoleinen raja-arvo on <span class="math notranslate nohighlight">\(\lim_{a \to f-} \frac{af}{a-f}=-\infty\)</span>, sillä positiivinen luku <span class="math notranslate nohighlight">\(af\)</span> jaettuna hyvin pienellä negatiivisella luvulla <span class="math notranslate nohighlight">\(a-f\)</span> on <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
+<p>Oikeanpuoleinen raja-arvo on <span class="math notranslate nohighlight">\(\lim_{a \to f+} \frac{af}{a-f}=\infty\)</span>, sillä positiivinen luku <span class="math notranslate nohighlight">\(af\)</span> jaettuna hyvin pienellä positiivisella luvulla <span class="math notranslate nohighlight">\(a-f\)</span> on <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+<p>Koska vasemman- ja oikeanpuoleinen raja-arvo ovat erisuuruiset, niin raja-arvoa ei ole olemassa, eikä kuvaa muodostu ollenkaan.</p>
+<p>b) Lasketaan raja-arvo <span class="math notranslate nohighlight">\(\lim_{a \to \infty} \frac{af}{a-f}\)</span>. Muokataan lauseketta supistamalla muuttujalla <span class="math notranslate nohighlight">\(a\)</span>. Menetelmä on siis sama, jota on käytetty edellisessä esimerkissä, vaikka näyttääkin nyt erilaiselta.</p>
+<p><span class="math notranslate nohighlight">\(\lim_{a \to \infty} \frac{\frac{af}{a}}{\frac{a-f}{a}} = \lim_{a \to \infty} \frac{f}{\frac{a}{a}-\frac{f}{a}} = \lim_{a \to \infty} \frac{f}{1-\frac{f}{a}} = \frac{f}{1} = f\)</span></p>
+<p>Kuva lähestyy siis polttopistettä, kun esinettä siirretään kauemmas.</p>
+</div>
+</div>
+<p>Jotkut funktiot ovat <strong>paloittain määriteltyjä</strong>, eli niiden lauseke on erilainen eri <span class="math notranslate nohighlight">\(x\)</span>:n arvoilla. Jos tällöin funktion raja-arvo on sama, kun lähestytään funktion lausekkeen muutoskohtaa eri suunnista, niin kyseinen funktio on muutoskohdassaan <strong>jatkuva</strong>.</p>
 <p>Tarkastellaan esimerkiksi seuraavaa funktiota:</p>
 <p><span class="math notranslate nohighlight">\(f(x)=\begin{equation}\begin{cases}-x^2+1, x \leq 1\\x-1, x &gt;1 \end{cases}\end{equation}\)</span></p>
 <p>Lasketaan raja-arvo kohdassa <span class="math notranslate nohighlight">\(x_0=1\)</span> erikseen vasemmalta ja oikealta. Nyt luvun 1 voi sijoittaa suoraan funktion lausekkeeseen:</p>
@@ -611,7 +642,7 @@ title="Print to PDF"
   
     By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2025.<br/>
 </p>
         </footer>
     </div>

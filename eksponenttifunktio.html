@@ -54,7 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Puolisuunnikassääntö" href="puolisuunnikassaanto.html" />
+    <link rel="next" title="Derivaatan käsite" href="erotusosamaara.html" />
+    <link rel="prev" title="Asymptootit" href="asymptootit.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,7 +120,7 @@ const thebe_selector_output = ".output, .cell_output"
   Funktiot
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="funktiot.html">
    Funktioista
@@ -133,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="asymptootit.html">
    Asymptootit
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Logaritmit ja eksponenttiyhtälöt
   </a>
  </li>
 </ul>
@@ -209,16 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
    Puolisuunnikassääntö
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Muuta
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Logaritmit ja eksponenttiyhtälöt
+ <li class="toctree-l1">
+  <a class="reference internal" href="tilastomatematiikkaa.html">
+   Tilastomatematiikkaa
   </a>
  </li>
 </ul>
@@ -454,7 +453,7 @@ title="Print to PDF"
 <h2>Logaritmiset suureet<a class="headerlink" href="#logaritmiset-suureet" title="Permalink to this headline">#</a></h2>
 <p>Logaritmeja käytetään sellaisten asioiden ilmaisemiseen, jotka voivat saada sekä hyvin pieniä että hyvin suuria arvoja. Esimerkki tästä on ihmisen kuulemat äänet. Tällaisten suureiden ilmaisussa tarvitaan suureeseen liittyvää intensiteettiä eli tehoa pinta-alayksikköä kohden, jota verrataan johonkin vertailuarvoon. Näiden intensiteettien suhteesta lasketaan kymmenkantainen logaritmi. Äänen tapauksessa vielä kerrotaan tämä logaritmi luvulla 10, jotta saadaan käytännöllinen asteikko äänenvoimakkuuksille. Äänen voimakkuutta kuvailevat desibelit (dB) saadaan seuraavasti:</p>
 <p><span class="math notranslate nohighlight">\(\text{dB}=10 \lg{\frac{I}{I_0}}\)</span></p>
-<p>missä <span class="math notranslate nohighlight">\(I\)</span> on kyseisen äänen intensiteetti ja <span class="math notranslate nohighlight">\(I_0\)</span> on vertailuarvo, joka on määritelty nollaksi desibeliksi ja vastaa hyvin heikkoa, juuri ja juuri kuuluvaa ääntä.</p>
+<p>missä <span class="math notranslate nohighlight">\(I\)</span> on kyseisen äänen intensiteetti ja <span class="math notranslate nohighlight">\(I_0\)</span> on vertailuarvo, joka on määritelty nollaksi desibeliksi ja vastaa hyvin heikkoa, juuri ja juuri kuuluvaa ääntä. Eri sovelluksissa on kuitenkin olemassa myös erilaisia määritelmiä desibelille.</p>
 <p>Kun laskuissa käytetään logaritmisia suureita, joutuu usein välivaiheena ratkaisemaan intensiteetin. Esimerkiksi kaksi 40 dB voimakkuudella toimivaa laitetta <strong>eivät</strong> tuota yhteensä 80 dB melua, vaan sellainen äänentason, joka muodostuu sijoittamalla desibelin määritelmään kaksinkertaisen <strong>intensiteetin</strong> ja laskemalla sitten kymmenkantaisen logaritmin.</p>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
@@ -471,10 +470,51 @@ title="Print to PDF"
 <p><span class="math notranslate nohighlight">\(\text{dB}=10 \lg{\frac{50\cdot I}{I_0}} = 10 \lg{\frac{50\cdot I_0 \cdot 10^{6.5}}{I_0}} = 10 \lg{(50\cdot 10^{6.5})} \approx 82\)</span></p>
 </div>
 </div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Vahvistimen sisäänmeno- ja ulostulojännite <span class="math notranslate nohighlight">\(u_{\text{in}}\)</span> ja <span class="math notranslate nohighlight">\(u_{\text{out}}\)</span> liittyvät desibeleinä ilmaistuun vahvistukseen <span class="math notranslate nohighlight">\(D\)</span> siten, että <span class="math notranslate nohighlight">\(D=20~\lg{(\frac{u_{\text{out}}}{u_{\text{in}}})}\)</span>.</p>
+<p>a) Kuinka monta desibeliä on vahvistus, jos sisään menevä jännite on 0.1 V ja vahvistettu jännite on 2 V?</p>
+<p>b) Kuinka moninkertaiseksi jännite voimistuu, jos vahvistus on 65 dB?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>a) Vahvistus on <span class="math notranslate nohighlight">\(D=20~\lg{(\frac{2}{0.1})} \approx 26~\text{dB}\)</span></p>
+<p>b) Ratkaistaan <span class="math notranslate nohighlight">\(u_{\text{out}}\)</span> yhtälöstä <span class="math notranslate nohighlight">\(65=20~\lg{(\frac{u_{\text{out}}}{u_{\text{in}}})}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\frac{65}{20}=\lg{(\frac{u_{\text{out}}}{u_{\text{in}}})}\)</span></p>
+<p><span class="math notranslate nohighlight">\(10^{\frac{65}{20}}=10^{\lg{\frac{u_{\text{out}}}{u_{\text{in}}}}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(10^{\frac{65}{20}}=\frac{u_{\text{out}}}{u_{\text{in}}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(u_{\text{out}}=10^{\frac{65}{20}}~u_{\text{in}}\)</span> eli <span class="math notranslate nohighlight">\(u_{\text{out}} \approx 1778~u_{\text{in}}\)</span></p>
+</div>
+</div>
+<div class="admonition-esimerkki-logaritmisesta-suureesta-jossa-ei-kayteta-desibeleja admonition">
+<p class="admonition-title">Esimerkki logaritmisesta suureesta, jossa ei käytetä desibelejä</p>
+<p>Kemiassa liuoksen happamuutta kuvaava pH-arvo on määritelty seuraavasti: <span class="math notranslate nohighlight">\(\text{pH}=-\lg{c}\)</span>, missä <span class="math notranslate nohighlight">\(c\)</span> on hapon konsentraatio (tai oikeastaan hapon vesiliuokseen luovuttamien oksoniumionien konsentraatio - kemian oppikirjoissa on myös muunlaisia määritelmiä, mutta tämä riittää matematiikkaan). Konsentraatio kuvaa veteen liuenneiden hiukkasten määrää (yksikkönä mooli, lyhenne mol) jaettuna veden tilavuudella (yksikkönä litra). Konsentraatiot ovat yleensä hyvin pieniä lukuja. Esimerkiksi jos hapon konsentraatio on 0.00345 mol/l, niin pH on <span class="math notranslate nohighlight">\(-\lg{0.00345}\approx 2.5\)</span>. Mitä pienempi on pH-arvo, niin sitä happamampaa liuos on. Arvo 2.5 vastaa suunnilleen sitruunamehua tai colajuomaa.</p>
+<p>Kuvitellaan, että kemistin pitää valmistaa happoliuosta, jonka pH on 3.5. Hän lisää veteen happoa siten, että hapon konsentraatio vastaa haluttua pH-arvoa. Lounastauon aikana hän unohtaa, että valmisti jo liuoksen, ja lisää veteen saman määrän happoa uudelleen. Tällöin konsentraatio kaksinkertaistuu. Mikä on liuoksen pH-arvo tämän virheen jälkeen?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Lasketaan ensin, mikä oli konsentraatio ensimmäisessä happoliuoksessa:</p>
+<p><span class="math notranslate nohighlight">\(3.5=-\lg{x}\)</span> eli <span class="math notranslate nohighlight">\(-3.5=\lg{x}\)</span></p>
+<p>Korotetaan molemmat puolet luvun 10 eksponentiksi: <span class="math notranslate nohighlight">\(10^{-3.5}=10^{\lg{x}}\)</span></p>
+<p>Logaritmin määritelmän perusteella <span class="math notranslate nohighlight">\(x=10^{-3.5} \approx 0.000316\)</span></p>
+<p>Uusi konsentraatio on kaksinkertainen, ja uudeksi pH-arvoksi saadaan <span class="math notranslate nohighlight">\(-\lg{(2\cdot 0.000316)} \approx 3.2\)</span></p>
+</div>
+</div>
 </section>
 <section id="eksponenttiyhtalot">
 <h2>Eksponenttiyhtälöt<a class="headerlink" href="#eksponenttiyhtalot" title="Permalink to this headline">#</a></h2>
-<p>Eksponenttiyhtälössä tuntematon <span class="math notranslate nohighlight">\(x\)</span> esiintyy eksponentissa. Yhtälön ratkaisussa tarvitaan tällöin välivaihetta, jossa otetaan kummastakin puolesta logaritmi. Ei ole väliä, mikä on logaritmin kantaluku. Usein käytetään luonnollista logaritmia.</p>
+<p>Eksponenttiyhtälössä tuntematon <span class="math notranslate nohighlight">\(x\)</span> esiintyy eksponentissa. Yhtälön ratkaisussa tarvitaan tällöin välivaihetta, jossa otetaan kummastakin puolesta logaritmi. Ei ole väliä, mikä on logaritmin kantaluku. Usein käytetään luonnollista logaritmia. Seuraavista esimerkeistä huomataan, että sovelluksia eksponenttiyhtälöille löytyy monilta aloilta taloustieteestä fysiikkaan. Esimerkiksi kofeiinin hajoamista ihmisen elimistössä voidaan myös mallintaa tällaisilla yhtälöillä. Tässä kuitenkin aluksi esimerkki ilman sen kummempaa sovellusta:</p>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Ratkaise luku <span class="math notranslate nohighlight">\(x\)</span> yhtälöstä <span class="math notranslate nohighlight">\(7^{3x}=15\)</span>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Otetaan yhtälön kummastakin puolesta <em>mikä tahansa</em> logaritmi, vaikkapa 10-kantainen logaritmi:</p>
+<p><span class="math notranslate nohighlight">\(\lg{7^{3x}}=\lg{15}\)</span></p>
+<p>Käytetään sääntöä <span class="math notranslate nohighlight">\(\lg{x^n}=n~\lg{x}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(3x~\lg{7}=\lg{15}\)</span></p>
+<p>Nyt yhtälö ratkeaa ihan suoraviivaisesti jakolaskulla:</p>
+<p><span class="math notranslate nohighlight">\(x=\frac{\lg{15}}{3\lg{7}}\)</span> ja jos halutaan likiarvoinen ratkaisu, niin laskimella saadaaan <span class="math notranslate nohighlight">\(x\approx 0.464\)</span>. Laskin saattaa antaa myös sellaisia ratkaisuja, jotka ovat kompleksilukuja, mutta tässä yhteydessä ratkaisuksi riittää reaaliluku.</p>
+</div>
+</div>
 <div class="admonition-esimerkki admonition">
 <p class="admonition-title">Esimerkki</p>
 <p>Rahaa talletetaan tilille 2000 euroa. Talletus kasvaa korkoa 4 % vuodessa. Toisin sanoen tilillä oleva rahamäärä kerrotaan joka vuoden lopussa luvulla 1.04. Tällöin vuoden jälkeen rahaa on <span class="math notranslate nohighlight">\(1.04\cdot 2000\)</span> euroa, kahden vuoden jälkeen <span class="math notranslate nohighlight">\(1.04\cdot 1.04\cdot 2000\)</span> euroa eli lyhyemmin kirjoitettuna <span class="math notranslate nohighlight">\(1.04^2 \cdot 2000\)</span> euroa, kolmen vuoden jälkeen <span class="math notranslate nohighlight">\(1.04^3\cdot 2000\)</span> euroa jne. ja yleisesti <span class="math notranslate nohighlight">\(x\)</span> vuoden kuluttua <span class="math notranslate nohighlight">\(1.04^x\cdot 2000\)</span> euroa. Kuinka pitkän talletusajan jälkeen tilillä oleva rahamäärä on kasvanut 3000 euroon? Laskussa ei tarvitse huomioida veroja, palvelumaksuja, inflaatiota  ym.</p>
@@ -492,6 +532,21 @@ title="Print to PDF"
 <p>Laskimella saadaan tulos <span class="math notranslate nohighlight">\(x\approx 10.338\)</span>, eli hieman yli 10 vuotta. Ratkaisun voi tarkistaa sijoittamalla luvun alkuperäiseen yhtälöön: <span class="math notranslate nohighlight">\(1.04^{10.338}\cdot 2000 \approx 2999.996\dots\)</span>.</p>
 <p>Sama tulos saataisiin, vaikka valittaisiin kantaluvuksi jokin muu kuin <span class="math notranslate nohighlight">\(e\)</span>, esimerkiksi <span class="math notranslate nohighlight">\(10\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(x = \frac{\lg{\frac{3}{2}}}{\lg{1.04}} \approx 10.338\)</span></p>
+</div>
+</div>
+<div class="admonition-esimerkki admonition">
+<p class="admonition-title">Esimerkki</p>
+<p>Valon intensiteettiä <span class="math notranslate nohighlight">\(I\)</span> jonkin ainekerroksen takana voidaan kuvata yhtälöllä <span class="math notranslate nohighlight">\(I=I_0~e^{kx}\)</span>, missä <span class="math notranslate nohighlight">\(I_0\)</span> on alkuperäinen intensiteetti, <span class="math notranslate nohighlight">\(x\)</span> on ainekerroksen paksuus ja <span class="math notranslate nohighlight">\(k\)</span> on aineelle ominainen vaimennuskerroin. Oletetaan, että erään lammen pohjaa tutkitaan lampulla. Lammen vesi on sellaista, että kahden metrin syvyydessä valon intensiteetistä on jäljellä 20 % alkuperäisestä. Minkä verran intensiteetistä on jäljellä 4 metrin syvyydessä veden alla?</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Ratkaisu</p>
+<p>Vaimentunut intensiteetti on 20 % alkuperäisestä, joten voidaan kirjoittaa <span class="math notranslate nohighlight">\(I=0.2~I_0\)</span>. Tällöin ratkaistavaksi yhtälöksi muodostuu <span class="math notranslate nohighlight">\(0.2~I_0 = I_0~e^{k\cdot 2}\)</span>. Alkuperäinen intensiteetti <span class="math notranslate nohighlight">\(I_0\)</span> supistuu pois, joten <span class="math notranslate nohighlight">\(0.2=e^{k\cdot 2}\)</span>. Ratkaistaan vaimennuskerroin <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\ln{0.2}=\ln{e^{2k}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln{0.2}=2k \ln{e}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln{0.2} = 2k\)</span>, koska <span class="math notranslate nohighlight">\(\ln{e} = 1\)</span></p>
+<p>Siis <span class="math notranslate nohighlight">\(k=\frac{\ln{0.2}}{2}\approx -0.80472\)</span></p>
+<p>Sijoitetaan sitten tämä luku ja uusi syvyys 4 m yhtälöön:</p>
+<p><span class="math notranslate nohighlight">\(I=I_0~e^{-0.80472\cdot 2}\)</span> josta saadaan <span class="math notranslate nohighlight">\(I = 0.04~I_0\)</span></p>
+<p>Valon intensiteetistä on siis jäljellä 4 %.</p>
 </div>
 </div>
 </section>
@@ -524,12 +579,19 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="puolisuunnikassaanto.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="asymptootit.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Puolisuunnikassääntö</p>
+            <p class="prev-next-title">Asymptootit</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="erotusosamaara.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Derivaatan käsite</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
@@ -540,7 +602,7 @@ title="Print to PDF"
   
     By LUMA-tiimi, Lapin AMK / Minna Korhonen<br/>
   
-      &copy; Copyright 2024.<br/>
+      &copy; Copyright 2025.<br/>
 </p>
         </footer>
     </div>

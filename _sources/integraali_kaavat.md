@@ -4,9 +4,7 @@ Funktio $F(x)$ on funktion $f(x)$ _integraalifunktio_, jos $F'(x)=f(x)$. Esimerk
 
 Yleisesti funktiolla $f(x)$ on äärettömän monta integraalifunktiota $F(x)+C$, missä $C$ on jokin reaaliluku. Lukua $C$ kutsutaan integroimisvakioksi. Kaikki funktiot $F(x)+C$ ovat funktion $f(x)$ integraalifunktioita riippumatta luvun $C$ arvosta, sillä vakio $C$ ei vaikuta funktion derivaattaan. Näin ollen myös esimerkiksi funktio $F(x)=\frac{1}{3}x^3+5$ on funktion $f(x)$ eräs integraalifunktio.
 
-Funktioiden $f(x)$ ja $F(x)+C$ yhteyttä merkitään seuraavasti:
-
-$\int f(x)~\text{d}x = F(x)+C$
+Funktion $F(x)$ laskemista funktiolle $f(x)$ merkitään seuraavasti: $F(x)=\int f(x)~\text{d}x + C$
 
 Merkintä $\text{d}x$ tarkoittaa, että funktiota $f(x)$ käsitellään nimenomaan muuttujan $x$ suhteen.
 
@@ -16,17 +14,14 @@ Seuraavaksi esitellään kaavat, joilla onnistuu yksinkertaisten funktioiden int
 
 ## Perusfunktioiden integrointi
 
-- Vakiofunktio: $\int a~\text{d}x = ax+C$
-
-- Potenssifunktio $(n \neq -1)$: $\int x^n~\text{d}x = \frac{1}{n+1}x^{n+1} + C$
-
-- Potenssifunktion erikoistapaus: $\int \frac{1}{x}~\text{d}x=\text{ln}~x+C$
-
-- Eksponenttifunktio: $\int e^x~\text{d}x=e^x+C$
-
-- Sinifunktio: $\int\text{sin}~x~\text{d}x=-\text{cos}~x+C$
-
-- Kosinifunktio: $\int\text{cos}~x~\text{d}x=\text{sin}~x+C$
+|Funktio |Laskukaava |
+|---|---|
+|Vakiofunktio | $\int a~\text{d}x = ax+C$ |
+|Potenssifunktio $(n \neq -1)$ | $\int x^n~\text{d}x = \frac{1}{n+1}x^{n+1} + C$ |
+|Potenssifunktion erikoistapaus | $\int \frac{1}{x}~\text{d}x=\text{ln}~x+C$ |
+|Eksponenttifunktio | $\int e^x~\text{d}x=e^x+C$ |
+|Sinifunktio | $\int\text{sin}~x~\text{d}x=-\text{cos}~x+C$ |
+|Kosinifunktio | $\int\text{cos}~x~\text{d}x=\text{sin}~x+C$ |
 
 ::::{admonition} Esimerkki
 
@@ -54,18 +49,17 @@ $\int x^{\frac{1}{2}}~\text{d}x = \frac{1}{\frac{1}{2}+1}x^{\frac{1}{2}+1} = \fr
 ::::
 
 
-## Yhdistetyn funktion integrointi
+## Muiden funktioiden integrointi
 
-- Summan integraali: $\int f(x) + g(x) ~\text{d}x = \int f(x) ~\text{d}x+\int g(x) ~\text{d}x$
+Näillä säännöillä voidaan integroida kahden perusfunktion summa tai vakiolla kerrottu perusfunktio, sekä lisäksi yhdistettyjen funktioiden erikoistapauksia erikoistapaukset joissa a) yhdisten funktion muuttuja on kerrottu vakiolla, b) yhdistetyn funktion sisäfunktio on suoran yhtälö, tai c) yhdistetty funktio on kerrottu sisäfunktionsa derivaatalla. Jälkimmäisissä tapauksissa oletetaan, että $\int f(x)~\text{d}x = F(x)+C$.
 
-- Vakiolla kerrotun funktion integraali: $\int af(x)~\text{d}x=a\int f(x)~\text{d}x$
-
-- Jos $\int f(x)~\text{d}x = F(x)+C\), niin \(\int f(ax)~\text{d}x = \frac{1}{a} F(ax) + C$
-
-- Jos $\int f(x)~\text{d}x = F(x)+C\), niin \(\int f(ax+b)~\text{d}x = \frac{1}{a} F(ax+b) + C$
-
-- Jos $\int f(x)~\text{d}x = F(x)+C\), niin \(\int f(s(x))\cdot s'(x)~\text{d}x=F(s(x))+C$
-
+|Tapaus |Laskukaava |
+|---|---|
+|Summa | $\int f(x) + g(x) ~\text{d}x = \int f(x) ~\text{d}x+\int g(x) ~\text{d}x$ |
+|Vakiolla kerrottu funktio | $\int af(x)~\text{d}x=a\int f(x)~\text{d}x$ |
+|Sisäfunktio $ax$ | $\int f(ax)~\text{d}x = \frac{1}{a} F(ax) + C$ |
+|Sisäfunktio $ax+b$ |$\int f(ax+b)~\text{d}x = \frac{1}{a} F(ax+b) + C$ |
+|Kertoimena sisäfunktion derivaatta | $\int f(s(x))\cdot s'(x)~\text{d}x=F(s(x))+C$ |
 
 ::::{admonition} Esimerkki
 
@@ -78,7 +72,6 @@ b) $\int \text{cos}(3x)~\text{d}x$
 c) $\int (7x+2)^3~\text{d}x$
 
 d) $\int \text{sin}(x^2)\cdot 2x~\text{d}x$
-
 
 :::{admonition} Ratkaisu
 :class: tip, dropdown
@@ -162,8 +155,3 @@ $\int \frac{x^2+x+1}{x}~\text{d}x = \int x+1+\frac{1}{x}~\text{d}x=\frac{1}{2}x^
 :::
 
 ::::
-
-
-
-
-

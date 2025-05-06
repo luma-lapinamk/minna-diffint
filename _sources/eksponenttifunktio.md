@@ -41,7 +41,7 @@ Logaritmeja käytetään sellaisten asioiden ilmaisemiseen, jotka voivat saada s
 
 $\text{dB}=10 \lg{\frac{I}{I_0}}$
 
-missä $I$ on kyseisen äänen intensiteetti ja $I_0$ on vertailuarvo, joka on määritelty nollaksi desibeliksi ja vastaa hyvin heikkoa, juuri ja juuri kuuluvaa ääntä.
+missä $I$ on kyseisen äänen intensiteetti ja $I_0$ on vertailuarvo, joka on määritelty nollaksi desibeliksi ja vastaa hyvin heikkoa, juuri ja juuri kuuluvaa ääntä. Eri sovelluksissa on kuitenkin olemassa myös erilaisia määritelmiä desibelille.
 
 Kun laskuissa käytetään logaritmisia suureita, joutuu usein välivaiheena ratkaisemaan intensiteetin. Esimerkiksi kaksi 40 dB voimakkuudella toimivaa laitetta **eivät** tuota yhteensä 80 dB melua, vaan sellainen äänentason, joka muodostuu sijoittamalla desibelin määritelmään kaksinkertaisen **intensiteetin** ja laskemalla sitten kymmenkantaisen logaritmin.
 
@@ -72,9 +72,87 @@ $\text{dB}=10 \lg{\frac{50\cdot I}{I_0}} = 10 \lg{\frac{50\cdot I_0 \cdot 10^{6.
 
 ::::
 
+::::{admonition} Esimerkki
+
+Vahvistimen sisäänmeno- ja ulostulojännite $u_{\text{in}}$ ja $u_{\text{out}}$ liittyvät desibeleinä ilmaistuun vahvistukseen $D$ siten, että $D=20~\lg{(\frac{u_{\text{out}}}{u_{\text{in}}})}$. 
+
+a) Kuinka monta desibeliä on vahvistus, jos sisään menevä jännite on 0.1 V ja vahvistettu jännite on 2 V? 
+
+b) Kuinka moninkertaiseksi jännite voimistuu, jos vahvistus on 65 dB?
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+a) Vahvistus on $D=20~\lg{(\frac{2}{0.1})} \approx 26~\text{dB}$
+
+b) Ratkaistaan $u_{\text{out}}$ yhtälöstä $65=20~\lg{(\frac{u_{\text{out}}}{u_{\text{in}}})}$:
+
+$\frac{65}{20}=\lg{(\frac{u_{\text{out}}}{u_{\text{in}}})}$
+
+$10^{\frac{65}{20}}=10^{\lg{\frac{u_{\text{out}}}{u_{\text{in}}}}}$
+
+$10^{\frac{65}{20}}=\frac{u_{\text{out}}}{u_{\text{in}}}$
+
+$u_{\text{out}}=10^{\frac{65}{20}}~u_{\text{in}}$ eli $u_{\text{out}} \approx 1778~u_{\text{in}}$ 
+
+:::
+
+::::
+
+
+::::{admonition} Esimerkki logaritmisesta suureesta, jossa ei käytetä desibelejä
+
+Kemiassa liuoksen happamuutta kuvaava pH-arvo on määritelty seuraavasti: $\text{pH}=-\lg{c}$, missä $c$ on hapon konsentraatio (tai oikeastaan hapon vesiliuokseen luovuttamien oksoniumionien konsentraatio - kemian oppikirjoissa on myös muunlaisia määritelmiä, mutta tämä riittää matematiikkaan). Konsentraatio kuvaa veteen liuenneiden hiukkasten määrää (yksikkönä mooli, lyhenne mol) jaettuna veden tilavuudella (yksikkönä litra). Konsentraatiot ovat yleensä hyvin pieniä lukuja. Esimerkiksi jos hapon konsentraatio on 0.00345 mol/l, niin pH on $-\lg{0.00345}\approx 2.5$. Mitä pienempi on pH-arvo, niin sitä happamampaa liuos on. Arvo 2.5 vastaa suunnilleen sitruunamehua tai colajuomaa.
+
+Kuvitellaan, että kemistin pitää valmistaa happoliuosta, jonka pH on 3.5. Hän lisää veteen happoa siten, että hapon konsentraatio vastaa haluttua pH-arvoa. Lounastauon aikana hän unohtaa, että valmisti jo liuoksen, ja lisää veteen saman määrän happoa uudelleen. Tällöin konsentraatio kaksinkertaistuu. Mikä on liuoksen pH-arvo tämän virheen jälkeen?
+
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+Lasketaan ensin, mikä oli konsentraatio ensimmäisessä happoliuoksessa:
+
+$3.5=-\lg{x}$ eli $-3.5=\lg{x}$
+
+Korotetaan molemmat puolet luvun 10 eksponentiksi: $10^{-3.5}=10^{\lg{x}}$
+
+Logaritmin määritelmän perusteella $x=10^{-3.5} \approx 0.000316$
+
+Uusi konsentraatio on kaksinkertainen, ja uudeksi pH-arvoksi saadaan $-\lg{(2\cdot 0.000316)} \approx 3.2$
+
+:::
+
+
+::::
+
 ## Eksponenttiyhtälöt
 
-Eksponenttiyhtälössä tuntematon $x$ esiintyy eksponentissa. Yhtälön ratkaisussa tarvitaan tällöin välivaihetta, jossa otetaan kummastakin puolesta logaritmi. Ei ole väliä, mikä on logaritmin kantaluku. Usein käytetään luonnollista logaritmia.
+Eksponenttiyhtälössä tuntematon $x$ esiintyy eksponentissa. Yhtälön ratkaisussa tarvitaan tällöin välivaihetta, jossa otetaan kummastakin puolesta logaritmi. Ei ole väliä, mikä on logaritmin kantaluku. Usein käytetään luonnollista logaritmia. Seuraavista esimerkeistä huomataan, että sovelluksia eksponenttiyhtälöille löytyy monilta aloilta taloustieteestä fysiikkaan. Esimerkiksi kofeiinin hajoamista ihmisen elimistössä voidaan myös mallintaa tällaisilla yhtälöillä. Tässä kuitenkin aluksi esimerkki ilman sen kummempaa sovellusta:
+
+::::{admonition} Esimerkki
+
+Ratkaise luku $x$ yhtälöstä $7^{3x}=15$.
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+Otetaan yhtälön kummastakin puolesta _mikä tahansa_ logaritmi, vaikkapa 10-kantainen logaritmi:
+
+$\lg{7^{3x}}=\lg{15}$
+
+Käytetään sääntöä $\lg{x^n}=n~\lg{x}$:
+
+$3x~\lg{7}=\lg{15}$
+
+Nyt yhtälö ratkeaa ihan suoraviivaisesti jakolaskulla:
+
+$x=\frac{\lg{15}}{3\lg{7}}$ ja jos halutaan likiarvoinen ratkaisu, niin laskimella saadaaan $x\approx 0.464$. Laskin saattaa antaa myös sellaisia ratkaisuja, jotka ovat kompleksilukuja, mutta tässä yhteydessä ratkaisuksi riittää reaaliluku.
+
+:::
+
+::::
+
+
 
 ::::{admonition} Esimerkki
 
@@ -106,6 +184,33 @@ Laskimella saadaan tulos $x\approx 10.338$, eli hieman yli 10 vuotta. Ratkaisun 
 Sama tulos saataisiin, vaikka valittaisiin kantaluvuksi jokin muu kuin $e$, esimerkiksi $10$:
 
 $x = \frac{\lg{\frac{3}{2}}}{\lg{1.04}} \approx 10.338$ 
+
+:::
+
+::::
+
+::::{admonition} Esimerkki
+
+Valon intensiteettiä $I$ jonkin ainekerroksen takana voidaan kuvata yhtälöllä $I=I_0~e^{kx}$, missä $I_0$ on alkuperäinen intensiteetti, $x$ on ainekerroksen paksuus ja $k$ on aineelle ominainen vaimennuskerroin. Oletetaan, että erään lammen pohjaa tutkitaan lampulla. Lammen vesi on sellaista, että kahden metrin syvyydessä valon intensiteetistä on jäljellä 20 % alkuperäisestä. Minkä verran intensiteetistä on jäljellä 4 metrin syvyydessä veden alla?
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+Vaimentunut intensiteetti on 20 % alkuperäisestä, joten voidaan kirjoittaa $I=0.2~I_0$. Tällöin ratkaistavaksi yhtälöksi muodostuu $0.2~I_0 = I_0~e^{k\cdot 2}$. Alkuperäinen intensiteetti $I_0$ supistuu pois, joten $0.2=e^{k\cdot 2}$. Ratkaistaan vaimennuskerroin $k$: 
+
+$\ln{0.2}=\ln{e^{2k}}$
+
+$\ln{0.2}=2k \ln{e}$
+
+$\ln{0.2} = 2k$, koska $\ln{e} = 1$
+
+Siis $k=\frac{\ln{0.2}}{2}\approx -0.80472$
+
+Sijoitetaan sitten tämä luku ja uusi syvyys 4 m yhtälöön:
+
+$I=I_0~e^{-0.80472\cdot 2}$ josta saadaan $I = 0.04~I_0$
+
+Valon intensiteetistä on siis jäljellä 4 %.
 
 :::
 

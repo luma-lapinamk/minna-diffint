@@ -14,6 +14,25 @@ $\int_a^b \pi f(x)^2~\text{d}x$
 
 ::::{admonition} Esimerkki
 
+On kaadettu iso puu, jonka poikkileikkaus on ympyrä. Puu on tyvestä leveämpi ja latvasta ohuempi. Rungon sädettä (yksikössä cm) korkeudella $x$ tyvestä mitattuna voidaan kuvata funktiolla $f(x)=10-0.01x$ eli säde on alhaalla 10 cm ja pienenee aina metrin matkalla 1 cm. Mikä on puunrungon tilavuus tyvestä 300 cm korkeudelle?
+
+Piirrä funktio vaikkapa GeoGebralla. Kuvaajassa puu on maassa kyljellään, ja $x$-akseli kulkee sen läpi rungon keskellä pituussuunnassa.
+
+:::{admonition} Ratkaisu
+:class: tip, dropdown
+
+Jos runko sahattaisiin likimain tasapaksuiksi kiekoiksi, niin voitaisiin määrittää jokaisen kiekon tilavuus siten, että mitataan jokaisen kiekon säde $f(x)$ ja paksuus $\Delta x$ ja sitten lasketaan $\pi [f(x)]^2 \Delta x$. Sitten laskettaisiin kiekkojen tilavuudet yhteen. Tarkan tilavuuden määrittämiseksi tarvittaisiin äärettömän monta, äärettömän ohutta kiekkoa eli käytännössä kasa sahanpurua. Integraalilaskennalla tilavuuden $V$ määritys on helpompaa:
+
+$V=\int_0^{300} \pi (10-0.01x)^2~\text{d}x = 68801$ (yksikkönä cm$^3$, eli 0.07 m$^3$)
+
+Puiden tilavuuksia määritetään metsäalalla eri menetelmillä kuin tällä, esimerkiksi [tilavuusyhtälöiden](https://ak.maanmittauslaitos.fi/2019/metsatalous/yksittaisen-puun-tilavuuden-ja-arvon-maarittaminen) avulla. Metsäkoneet voivat laskea puun tilavuutta paikan päällä esimerkiksi mittaamalla rungon halkaisijan muutaman senttimetrin välein ja käsitelemällä näitä pätkiä katkaistun kartion laskukaavoilla.
+
+:::
+
+::::
+
+::::{admonition} Esimerkki
+
 Kartion tilavuuden laskukaava on $V=\frac{1}{3} \pi r^2 h$, missä $r$ on kartion pohjaympyrän säde ja $h$ on kartion korkeus. Johda tilavuuden laskukaava integroimalla. Kuvassa on esitetty kartion seinämän muodostavan funktion kuvaaja. Kartio on kyljellään siten, että sen kärki on pisteessä (0,0).
 
 ![Kartion tilavuus](kartio.png)
